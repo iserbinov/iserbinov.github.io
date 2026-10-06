@@ -307,6 +307,8 @@ figure{margin:0}
 .chap .links{display:flex;flex-wrap:wrap;gap:8px 20px}
 .chap>div>*+.links{margin-top:var(--s4)}
 .chap>div>h3+p{margin-top:0}
+.cfig.slide img{box-sizing:border-box;padding:clamp(10px,2.4vw,28px);background:#005FD0}
+.cert img{box-sizing:border-box;padding:clamp(8px,1.6vw,16px);background:#fff}
 @media (max-width:820px){.ckpis{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.chap code{white-space:normal;overflow-wrap:anywhere}}
 </style>
@@ -362,18 +364,18 @@ figure{margin:0}
       <p>Сделали 2 параллельные дизайн-системы. Внутренняя — полноценная: основы, продуктовые компоненты, паттерны, иконки, гайды. Развивается вместе с внутренними системами НЛМК. Открытая — с открытым кодом, о ней ниже.</p>
       <h3>Токены</h3>
       <p>Ключевое решение — токены на стороне дизайна, варианты компонентов на стороне фронтенда. Токены в 4 уровня: базовый цвет → палитра от 50 до 900 → семантический токен → токен компонента. Например, <code>base.primary-blue</code> → <code>primary-blue/700</code> → <code>primary-blue.default</code> → <code>ac.button.main-bg-def</code>. Так же устроены размеры: <code>size.base</code> 16 → <code>size.m</code> 36 → <code>input.m.height</code>. Токены хранятся в репозитории в JSON, у каждого есть описание.</p>
-      <figure class="cfig"><img src="/assets/nlmk/tokens.jpg" alt="Схема токенов: цвет и размеры от базового значения до токена компонента" width="1948" height="1495" loading="lazy"><figcaption class="mono">Цепочки токенов цвета и размеров</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/tokens.jpg" alt="Схема токенов: цвет и размеры от базового значения до токена компонента" width="1948" height="1495" loading="lazy"><figcaption class="mono">Цепочки токенов цвета и размеров</figcaption></figure>
       <h3>Компоненты</h3>
       <p>46 базовых компонентов в дизайне и 40 в коде. Сложные компоненты собраны из состояний и вариантов: у TreeList их больше 200.</p>
-      <figure class="cfig"><img src="/assets/nlmk/treelist.jpg" alt="Варианты компонента TreeList" width="2400" height="1323" loading="lazy"><figcaption class="mono">TreeList: уровни вложенности, выбор, ошибки, предупреждения</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/treelist.jpg" alt="Варианты компонента TreeList" width="2400" height="1323" loading="lazy"><figcaption class="mono">TreeList: уровни вложенности, выбор, ошибки, предупреждения</figcaption></figure>
       <h3>Версионирование и обновления</h3>
       <p>Общий номер версии для дизайна и кода и отдельный суффикс для каждой стороны: <code>v02.11.98.des34</code> и <code>v02.11.98.fe67</code>. Об обновлениях команды узнают из рассылки: новые компоненты, доработки, ссылки на код и документацию.</p>
-      <figure class="cfig"><img src="/assets/nlmk/digest.jpg" alt="Пример рассылки об обновлении дизайн-системы 2.0" width="2400" height="1323" loading="lazy"><figcaption class="mono">Рассылка об осеннем обновлении</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/digest.jpg" alt="Пример рассылки об обновлении дизайн-системы 2.0" width="2400" height="1323" loading="lazy"><figcaption class="mono">Рассылка об осеннем обновлении</figcaption></figure>
     </div></div>
     <div class="chap"><h2>Открытая часть</h2><div>
       <p>Открытая дизайн-система — для дизайнеров и разработчиков вне НЛМК. Лендинг <a href="https://ds.nlmk.com">ds.nlmk.com</a>, UI-кит в Figma, Storybook, пакет <code>@nlmk/ds-2.0</code> в npm, репозиторий на GitHub, лицензия MIT. В ней логотип, палитра с генерацией по HEX-коду бренда, типографика на PT Root UI, иконки, модульная сетка, светлая и тёмная темы.</p>
       <p class="links mono"><a href="https://www.figma.com/@nlmk">UI-кит в Figma ↗</a><a href="https://nlmk-group.github.io/ds-2.0/?path=/docs/introduction-welcome--docs">Storybook ↗</a><a href="https://www.npmjs.com/package/@nlmk/ds-2.0">npm ↗</a><a href="https://github.com/nlmk-group/ds-2.0">GitHub ↗</a></p>
-      <figure class="cfig"><img src="/assets/nlmk/open-source.jpg" alt="Открытая дизайн-система: файл в Figma Community и Storybook" width="2400" height="802" loading="lazy"><figcaption class="mono">Для дизайнера — Figma, для разработчика — Storybook</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/open-source.jpg" alt="Открытая дизайн-система: файл в Figma Community и Storybook" width="2400" height="802" loading="lazy"><figcaption class="mono">Для дизайнера — Figma, для разработчика — Storybook</figcaption></figure>
     </div></div>
     <div class="chap"><h2>Результат</h2><div><ul>
       <li>Экономия от внедрения — около 1 млн долларов в год, оценка</li>
