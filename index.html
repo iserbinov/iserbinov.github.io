@@ -198,12 +198,12 @@ a.row:hover .plus{color:var(--accent);transform:translateX(3px)}
 .tool .mono{color:var(--muted);align-self:baseline}
 
 footer{padding-top:0}
-.cta{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s7);align-items:end}
+.cta{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s7);align-items:center}
 .cta .big{font:300 clamp(30px,4.4vw,52px)/1.08 var(--f-display);letter-spacing:-.03em;margin:0;text-wrap:balance}
 .cta .ways{display:grid;gap:var(--s3)}
-.cta .ways div{display:grid;grid-template-columns:96px 1fr;gap:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
+.cta .ways div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
 .cta .ways dt{color:var(--muted);margin:0}
-.cta .ways dd{margin:0;overflow-wrap:anywhere}
+.cta .ways dd{margin:0;white-space:nowrap}
 .foot{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s6);padding-inline:4px;color:var(--muted)}
 .foot a{text-decoration:none}.foot a:hover{color:var(--fg)}
 .log{margin-top:var(--s4);border-top:1px solid var(--line);padding-top:var(--s4);display:grid;grid-template-columns:120px 1fr;gap:var(--s4);color:var(--muted)}
@@ -277,16 +277,16 @@ footer{padding-top:0}
       <summary>
         <span class="yr">2026 —</span>
         <span class="co">Т-Банк · TUI<small class="now">сейчас</small></span>
-        <span class="what">Слой блоков в дизайн-системе TUI</span>
+        <span class="what">Стрим блоков в дизайн-системе TUI</span>
         <span class="scale">Старший дизайнер в команде дизайн-системы</span>
         <span class="plus" aria-hidden="true">+</span>
       </summary>
       <div class="brief">
-        <div class="img" data-a="fill" data-tok="surface/plate" data-ratio="3:1"><span class="mono">tui-cover.png · 3:1</span></div>
+        <div class="img" data-a="img" data-tok="img/tui-cover.jpeg" data-ratio="3:1"><img src="/assets/tui-cover.jpeg" alt="Т-Банк" width="2400" height="800" loading="lazy"></div>
         <div class="cols">
-          <div><h3>Контекст</h3><p>Веб Т-Банка — четыре поверхности: страницы и лендинги, авторизованная зона, WebView внутри мобильного банка и PWA. Все они собираются по одной схеме: компоненты TUI → блоки → страницы. Каждый блок — отдельный микрофронтенд со своим владельцем, данными по API и независимым релизом.</p></div>
-          <div><h3>Что сделал</h3><ul><li>Слой блоков между компонентами TUI и страницами</li><li>Общие блоки — для разных фич и команд</li><li>Локальные блоки — под конкретную фичу</li></ul></div>
-          <div><h3>Результат</h3><p>Правка блока попадает в прод без сборки приложения и релиза в сторе.</p></div>
+          <div><h3>Контекст</h3><p>600+ общих блоков для 74 продуктовых команд. Blocks — функциональный слой между компонентами TUI и готовыми страницами. Работает на 4 веб-поверхностях Т-Банка</p></div>
+          <div><h3>Что сделал</h3><ul><li>Отвечал за дизайн-направление Blocks с фокусом на личный кабинет</li><li>Проектировал и развивал UI-блоки, следил за их консистентностью с TUI</li><li>Выстраивал правила и процессы создания, редизайна и поддержки блоков</li><li>Вёл дизайнера и стажёра, координировал разработчиков и продуктовые команды</li><li>Вёл миграции и адаптацию блоков под новое устройство Apple с уникальным форм-фактором</li></ul></div>
+          <div><h3>Результат</h3><p>Работал с каждым из 600+ блоков: новые блоки, обновления спецификаций, доработки. Дизайнер стал полноправным участником процесса — с шаблонами и гайдами для создания и поддержки блоков</p></div>
         </div>
         <div class="more"><span class="mono">Полный кейс под NDA</span><a class="go" href="https://t.me/ivanserbinov">Написать в Telegram ↗</a></div>
       </div>
@@ -325,41 +325,61 @@ footer{padding-top:0}
         <span class="plus" aria-hidden="true">+</span>
       </summary>
       <div class="brief">
-        <div class="img"><span class="mono">nlmk-cover.png · 3:1</span></div>
+        <div class="img"><img src="/assets/nlmk/Cover.png" alt="Дизайн-система 2.0 НЛМК" width="2400" height="1323" loading="lazy" style="object-position:50% 100%"></div>
+        <div class="kpis">
+          <div class="kpi"><b>$1&nbsp;млн</b><span>экономия в год от внедрения, оценка</span></div>
+          <div class="kpi"><b>8,1</b><span>индекс удовлетворён&shy;ности дизайн-системой</span></div>
+          <div class="kpi"><b>46 / 40</b><span>базовых компонентов в дизайне и в коде</span></div>
+        </div>
         <div class="cols">
-          <div><h3>Контекст</h3><p>Пригласили запустить дизайн-систему. Внутренние продукты строились на перекрашенном Material UI.</p></div>
-          <div><h3>Что сделал</h3><ul><li>Поездки на заводы к пользователям, интервью с дизайнерами</li><li>Токены в дизайне и их реализация во фронтенде</li><li>Кит компонентов параллельно с разработкой</li><li>Тесты, обратная связь, метрики</li><li>Поэтапная миграция, документация, поддержка</li></ul></div>
-          <div><h3>Результат</h3><p>Своя дизайн-система с публичной документацией на <a href="https://ds.nlmk.com">ds.nlmk.com</a>.</p></div>
+          <div><h3>Контекст</h3><p>Дизайн-система 1.0 — перекрашенный Material UI. Задача — собственная дизайн-система 2.0 для производственных интерфейсов, MES-систем</p></div>
+          <div><h3>Что сделал</h3><ul><li>Исследование: поездки на заводы, запросы дизайнеров</li><li>Токены в 4 уровня — от базового цвета до токена компонента</li><li>Кит компонентов параллельно с разработкой</li><li>Нейминг, версионирование и документация вместе с разработчиками</li><li>Открытая часть: Figma, Storybook, npm</li></ul></div>
+          <div><h3>Результат</h3><p>2 дизайн-системы — внутренняя и открытая, <a href="https://ds.nlmk.com">ds.nlmk.com</a>. Свидетельство о регистрации программы для ЭВМ</p></div>
         </div>
         <div class="more"><span class="mono">serbinov.com/projects/nlmk</span><a class="go" href="/projects/nlmk">Полный кейс →</a></div>
       </div>
     </details>
 
-    <a class="row link" href="/projects/sber"><div class="static">
-      <span class="yr">2021–22</span><span class="co">СберКласс</span><span class="what">Учебный процесс в четвёртой версии платформы</span><span class="scale">Старший продуктовый дизайнер</span><span class="plus" aria-hidden="true">→</span>
-    </div></a>
+    <details class="row">
+      <summary>
+        <span class="yr">2021–22</span>
+        <span class="co">СберКласс</span>
+        <span class="what">Учебный процесс в четвёртой версии платформы</span>
+        <span class="scale">Старший продуктовый дизайнер</span>
+        <span class="plus" aria-hidden="true">+</span>
+      </summary>
+      <div class="brief">
+        <div class="img" data-a="img" data-tok="img/sber-cover.jpeg" data-ratio="3:1"><img src="/assets/sber-cover.jpeg" alt="СберКласс" width="2400" height="800" loading="lazy"></div>
+        <div class="cols">
+          <div><h3>Контекст</h3><p>Платформа для школы: ученики, учителя и все, кто участвует в учебном процессе. Работал над четвёртой версией</p></div>
+          <div><h3>Что сделал</h3><ul><li>Отвечал за направление учебного процесса</li><li>Проработал все флоу учебного процесса</li><li>Провёл полевые исследования</li></ul></div>
+          <div><h3>Результат</h3><p>Макеты четвёртой версии открыты <a href="https://www.figma.com/file/UlpgrtjI2nFO3uuH0r6gDo/4.0-_-Web-_-Pro-_-Student-_-Profile?type=design&amp;node-id=1-82391&amp;mode=design&amp;t=toc7jcuxl9Eq15fB-11">в Figma ↗</a></p></div>
+        </div>
+        <div class="more"><span class="mono">Кейс в проработке</span><span class="soon" aria-disabled="true">Скоро</span></div>
+      </div>
+    </details>
 
     <details class="row">
       <summary>
         <span class="yr">2020–21</span>
         <span class="co">Тетрика<small>проект VK</small></span>
         <span class="what">Команда дизайна с 2 до 8 человек, ребрендинг и дизайн-система</span>
-        <span class="scale">Тимлид дизайна</span>
+        <span class="scale">Тимлид отдела дизайна</span>
         <span class="plus" aria-hidden="true">+</span>
       </summary>
       <div class="brief">
-        <div class="img"><span class="mono">tetrika-cover.png · 3:1</span></div>
+        <div class="img" data-a="img" data-tok="img/tetrika-cover.jpeg" data-ratio="3:1"><img src="/assets/tetrika-cover.jpeg" alt="Тетрика, онлайн-школа" width="2400" height="800" loading="lazy"></div>
         <div class="kpis">
           <div class="kpi"><b>+35%</b><span>заявок после перестановки полей почты и телефона</span></div>
           <div class="kpi"><b>2 → 8</b><span>дизайнеров в команде за год</span></div>
           <div class="kpi"><b>~40</b><span>лендингов в год</span></div>
         </div>
         <div class="cols">
-          <div><h3>Контекст</h3><p>Онлайн-школа выросла на 900% за год — дизайн-команду нужно было масштабировать вместе с продуктом.</p></div>
-          <div><h3>Что сделал</h3><ul><li>Ребрендинг и бренд-гайд</li><li>Дизайн-система</li><li>Исследования, CJM, A/B-тесты</li><li>Приоритизация задач по данным</li></ul></div>
-          <div><h3>Результат</h3><p>Почти все джуны за год выросли до мидлов, а затем получили повышение в других компаниях.</p></div>
+          <div><h3>Контекст</h3><p>Онлайн-школа выросла на 900% за год — дизайн-команду нужно было масштабировать вместе с продуктом</p></div>
+          <div><h3>Что сделал</h3><ul><li>Ребрендинг и брендбук</li><li>Дизайн-система: кит, наработки для кодовой базы, гайды</li><li>Исследования, CJM, A/B-тесты</li><li>Приоритизация задач по данным</li><li>С CEO и CTO — дизайн-стратегия, роадмап, найм, процесс от дизайна до разработки</li></ul></div>
+          <div><h3>Результат</h3><p>Новый брендбук и дизайн-система, которой пользовались все команды. Около 40 лендингов в год. Почти все джуны за год выросли до мидлов, а затем получили повышение в других компаниях</p></div>
         </div>
-        <div class="more"><span class="mono">serbinov.com/projects/tetrika</span><a class="go" href="/projects/tetrika">Полный кейс →</a></div>
+        <div class="more"><span class="mono">Кейс в проработке</span><span class="soon" aria-disabled="true">Скоро</span></div>
       </div>
     </details>
 
@@ -372,7 +392,7 @@ footer{padding-top:0}
         <span class="plus" aria-hidden="true">+</span>
       </summary>
       <div class="brief">
-        <div class="img" data-a="img" data-tok="img/owen-cover.jpeg" data-r        <div class="imass        <div class="img" data-a="img" data-tok="img/o" height="800" loading="lazy"></div>
+        <div class="img" data-a="img" data-tok="img/owen-cover.jpeg" data-ratio="3:1"><img src="/assets/owen-cover.jpeg" alt="OWEN Education" width="2400" height="800" loading="lazy"></div>
         <div class="cols">
           <div><h3>Контекст</h3><p>Сеть офлайн-школ английского языка в Китае, которая выходила в онлайн</p></div>
           <div><h3>Что сделал</h3><p>Руководил процессами внутри WeChat, делал лендинги и собственный учебник школы</p></div>
@@ -381,12 +401,47 @@ footer{padding-top:0}
         <div class="more"><span class="mono">Кейс в проработке</span><span class="soon" aria-disabled="true">Скоро</span></div>
       </div>
     </details>
-    <a class="row link" href="/projects/element"><div class="static">
-      <span class="yr">2017–18</span><span class="co">Element Group</span><span class="what">Дизайн для блокчейн-стартапов<small>Проекты привлекли $250 млн</small></span><span class="scale">Тимлид дизайна</span><span class="plus" aria-hidden="true">→</span>
-    </div></a>
-    <a class="row link" href="/projects/russiatoday"><div class="static">
-      <span class="yr">2014–17</span><span class="co">RT en Español</span><span class="what">Команда из 4 дизайнеров и моушн-дизайнера</span><span class="scale">Тимлид дизайна</span><span class="plus" aria-hidden="true">→</span>
-    </div></a>
+    <details class="row art">
+      <summary>
+        <span class="yr">2017–18</span>
+        <span class="co">Element Group<small>США</small></span>
+        <span class="what">Дизайн для блокчейн-стартапов<small>Проекты привлекли $250 млн</small></span>
+        <span class="scale">Тимлид отдела дизайна</span>
+        <span class="plus" aria-hidden="true">+</span>
+      </summary>
+      <div class="brief">
+        <div class="img" data-a="img" data-tok="img/element-cover.jpeg" data-ratio="3:1"><img src="/assets/element-cover.jpeg" alt="Element" width="2400" height="800" loading="lazy"></div>
+        <div class="cols">
+          <div><h3>Контекст</h3><p>Американская консалтинговая компания на рынке цифровых активов. Стратегия и сопровождение токен-офферингов для блокчейн-стартапов из США</p></div>
+          <div><h3>Что сделал</h3><p>Отвечал за весь визуал маркетинга и продукта, руководил командой из 5+ подрядчиков: графика, UI/UX, моушн, 3D и иллюстрация</p></div>
+          <div><h3>Результат</h3><p>Проекты, которые мы сопровождали, привлекли $250&nbsp;млн инвестиций</p></div>
+        </div>
+        <div class="more"><span class="mono">Кейс в проработке</span><span class="soon" aria-disabled="true">Скоро</span></div>
+      </div>
+    </details>
+    <details class="row">
+      <summary>
+        <span class="yr">2014–17</span>
+        <span class="co">RT en Español</span>
+        <span class="what">Редизайн сайта, приложения и соцсетей испаноязычного канала</span>
+        <span class="scale">Тимлид отдела графического дизайна</span>
+        <span class="plus" aria-hidden="true">+</span>
+      </summary>
+      <div class="brief">
+        <div class="img" data-a="img" data-tok="img/rt-cover.jpeg" data-ratio="3:1"><img src="/assets/rt-cover.jpeg" alt="RT en Español" width="2400" height="800" loading="lazy"></div>
+        <div class="kpis">
+          <div class="kpi"><b>×2,5</b><span>посещаемость сайта: с 400&nbsp;тыс. до 1&nbsp;млн в день</span></div>
+          <div class="kpi"><b>×7</b><span>подписчиков в Facebook: с 600&nbsp;тыс. до 4,3&nbsp;млн</span></div>
+          <div class="kpi"><b>~100</b><span>инфографик</span></div>
+        </div>
+        <div class="cols">
+          <div><h3>Контекст</h3><p>Испаноязычный телеканал сети RT. Единого визуального стиля и UX не было, а решения для англоязычной аудитории плохо работали с испаноязычной</p></div>
+          <div><h3>Что сделал</h3><ul><li>Руководил отделом: 4&nbsp;дизайнера и моушн-дизайнер</li><li>Редизайн сайта, приложения и страниц в соцсетях</li><li>Концепции лонгридов, спецпроектов и телепрограмм</li><li>Короткие видео в дополнение к фото и шаблоны, по которым редакторы делали их сами</li><li>Фирменный стиль для Twitter, запуск Instagram до 50&nbsp;тыс. подписчиков</li></ul></div>
+          <div><h3>Результат</h3><p>Посещаемость сайта выросла с 400&nbsp;тыс. до 1&nbsp;млн в день, подписчиков в Facebook — с 600&nbsp;тыс. до 4,3&nbsp;млн. Статья с видео собирала до 32&nbsp;тыс. просмотров на сайте и 93&nbsp;тыс. на YouTube</p></div>
+        </div>
+        <div class="more"><span class="mono">Кейс в проработке</span><span class="soon" aria-disabled="true">Скоро</span></div>
+      </div>
+    </details>
   </section></div>
 
   <div class="frame"><div class="fname mono"><span>frame/talks</span><span class="size"></span></div><section class="sheet" id="talks" aria-labelledby="talksH">
@@ -394,16 +449,19 @@ footer{padding-top:0}
     <div class="row"><div class="static">
       <span class="yr">07.2026</span><span class="co pubt">Доклад</span><span class="what">Как устроен веб Т-Банка и при чём тут дизайн-система</span><span class="scale">ULCAMP’26 · Ульяновск</span><span></span>
     </div></div>
-    <div class="row"><div class="static">
-      <span class="yr">07.2025</span><span class="co pubt">Доклад</span><span class="what">Магия токен-вока: быстрое обжаривание единства из трёх независимых ингредиентов-систем для 70+ разнообразных подач</span><span class="scale">ULCAMP’25 · Ульяновск</span><span></span>
-    </div></div>
     <a class="row link art" href="https://vc.ru/design/2653795-read-only-v-dizajn-sisteme"><div class="static">
       <span class="yr">12.2025</span><span class="co pubt">Статья</span>
-      <span class="what">Read-only: как и зачем мы внедряли его в дизайн-систему<small>Состояние «только чтение» для компонентов Rampa в ecom.tech: данные можно читать и копировать, но не редактировать. Решение, документация и паттерны.</small></span>
+      <span class="what">Read-only: как и зачем мы внедряли его в дизайн-систему<small>Состояние «только чтение» для компонентов Rampa в ecom.tech: данные можно читать и копировать, но не редактировать. Решение, документация и паттерны</small></span>
       <span class="scale">vc.ru / Дизайн<span class="cover" data-a="img" data-tok="img/readonly-cover.jpeg" data-ratio="1.9:1"><img src="/assets/readonly-cover.jpeg" alt="Do и Don’t: Read-only вместо Disabled для просмотра данных" width="1848" height="973" loading="lazy"></span></span>
       <span class="plus" aria-hidden="true">↗</span>
     </div></a>
-    <p class="conf"><b>ULCAMP</b> — неформальный ИТ-фестиваль на берегу Волги. Конференция, open-air и комьюнити в одном.</p>
+    <div class="row"><div class="static">
+      <span class="yr">07.2025</span><span class="co pubt">Доклад</span><span class="what">Магия токен-вока: быстрое обжаривание единства из трёх независимых ингредиентов-систем для 70+ разнообразных подач</span><span class="scale">ULCAMP’25 · Ульяновск</span><span></span>
+    </div></div>
+    <div class="row"><div class="static">
+      <span class="yr">10.2024</span><span class="co pubt">Воркшоп</span><span class="what">Дизайн-системы в продуктовом дизайне</span><span class="scale">Bang Bang Education · приглашённый лектор от ecom.tech</span><span></span>
+    </div></div>
+    <p class="conf"><b>ULCAMP</b> — неформальный ИТ-фестиваль на берегу Волги. Конференция, open-air и комьюнити в одном</p>
   </section></div>
 
   <div class="frame"><div class="fname mono"><span>frame/path</span><span class="size"></span></div><section class="sheet" id="path" aria-labelledby="pathH">
@@ -411,14 +469,14 @@ footer{padding-top:0}
     <div class="gantt" id="gantt" data-from="2014" data-to="2027">
       <div class="gantt-head"></div>
       <div class="g-track" id="gtrack"></div>
-      <div class="g-row ds now" data-s="2026.17" data-e="2026.8" data-sc="слой блоков"><span class="g-lab"><b>Т-Банк</b><span class="gy">2026 —</span><span class="gt">Старший дизайнер в команде дизайн-системы</span><em>слой блоков</em></span></div>
+      <div class="g-row ds now" data-s="2026.17" data-e="2026.8" data-sc="стрим блоков"><span class="g-lab"><b>Т-Банк</b><span class="gy">2026 —</span><span class="gt">Старший дизайнер в команде дизайн-системы</span><em>стрим блоков</em></span></div>
       <div class="g-row ds" data-s="2024.25" data-e="2026" data-sc="3 дизайн-системы, 1 база токенов"><span class="g-lab"><b>ecom.tech</b><span class="gy">2024–26</span><span class="gt">Лид дизайн-системы</span><em>3 дизайн-системы, 1 база токенов</em></span></div>
       <div class="g-row ds" data-s="2022.42" data-e="2024.25" data-sc="своя дизайн-система"><span class="g-lab"><b>НЛМК</b><span class="gy">2022–24</span><span class="gt">Дизайнер и создатель дизайн-системы</span><em>своя дизайн-система</em></span></div>
       <div class="g-row " data-s="2021" data-e="2022.3" data-sc="учебный процесс"><span class="g-lab"><b>СберКласс</b><span class="gy">2021–22</span><span class="gt">Старший продуктовый дизайнер</span><em>учебный процесс</em></span></div>
-      <div class="g-row mix" data-s="2020" data-e="2021" data-sc="2 → 8 дизайнеров"><span class="g-lab"><b>Тетрика</b><span class="gy">2020–21</span><span class="gt">Тимлид дизайна</span><em>2 → 8 дизайнеров</em></span></div>
+      <div class="g-row mix" data-s="2020" data-e="2021" data-sc="2 → 8 дизайнеров"><span class="g-lab"><b>Тетрика</b><span class="gy">2020–21</span><span class="gt">Тимлид отдела дизайна</span><em>2 → 8 дизайнеров</em></span></div>
       <div class="g-row " data-s="2018.5" data-e="2020" data-sc="Китай, WeChat"><span class="g-lab"><b>OWEN Education</b><span class="gy">2018–20</span><span class="gt">Старший продуктовый дизайнер</span><em>Китай, WeChat</em></span></div>
-      <div class="g-row " data-s="2017.5" data-e="2018.5" data-sc="команда 5+"><span class="g-lab"><b>Element Group</b><span class="gy">2017–18</span><span class="gt">Тимлид дизайна</span><em>команда 5+</em></span></div>
-      <div class="g-row " data-s="2014" data-e="2017" data-sc="команда 4 + 1"><span class="g-lab"><b>RT en Español</b><span class="gy">2014–17</span><span class="gt">Тимлид дизайна</span><em>команда 4 + 1</em></span></div>
+      <div class="g-row " data-s="2017.5" data-e="2018.5" data-sc="команда 5+"><span class="g-lab"><b>Element Group</b><span class="gy">2017–18</span><span class="gt">Тимлид отдела дизайна</span><em>команда 5+</em></span></div>
+      <div class="g-row " data-s="2014" data-e="2017" data-sc="команда 4 + 1"><span class="g-lab"><b>RT en Español</b><span class="gy">2014–17</span><span class="gt">Тимлид отдела графического дизайна</span><em>команда 4 + 1</em></span></div>
     </div>
     <div class="g-legend"><span><i style="background:color-mix(in srgb,var(--muted) 55%,var(--bg))"></i>продуктовый дизайн</span><span><i style="background:var(--fg)"></i>дизайн-системы</span><span><i style="background:var(--accent-fill)"></i>сейчас</span></div>
   </section></div>
@@ -428,9 +486,9 @@ footer{padding-top:0}
     <div class="split about-split">
       <div class="bio">
         <div class="me"><span class="avatar" data-a="img" data-tok="img/image-ava.png" data-pos="below"><img src="/assets/image-ava.png" alt="Иван Сербинов" width="240" height="240"></span><span class="me-t"><b>Иван Сербинов</b><span class="mono">Москва · RU / EN C1</span></span></div>
-        <p>Учился на политолога, работал фотографом и журналистом, потом пришёл в продуктовый дизайн. Последние годы занимаюсь дизайн-системами.</p>
-        <p>Люблю сложные системы, ясные интерфейсы и вещи, которые хорошо собраны.</p>
-        <p class="m">Родился в Москве. Был в 42 странах, жил в России, Таиланде, Китае, США и Испании. Люблю путешествовать, фото, кино и фисташковое мороженое.</p>
+        <p>Учился на политолога, работал фотографом и журналистом, потом пришёл в продуктовый дизайн. Последние годы занимаюсь дизайн-системами</p>
+        <p>Люблю сложные системы, ясные интерфейсы и вещи, которые хорошо сделаны</p>
+        <p class="m">Родился в Москве. Был в 42 странах, жил в России, Таиланде, Китае, США и Испании. Люблю путешествовать, фото, кино и фисташковое мороженое</p>
       </div>
       <div>
         <div class="skill core"><b>Design Systems</b><span>Т-Банк, ecom.tech, НЛМК, Тетрика</span></div>
@@ -441,8 +499,8 @@ footer{padding-top:0}
         <div class="skill core"><b>Design ↔ Development</b><span>Т-Банк, ecom.tech, НЛМК</span></div>
         <div style="margin-top:var(--s7)"><span class="label">Инструменты, которые пишу сам</span>
         <div style="margin-top:12px">
-          <div class="tool"><b>TUI Doc Builder</b><span class="mono">Figma</span><p>Собирает страницы документации из Markdown с блоками правил, примеров, глоссария и ссылок.</p></div>
-          <div class="tool"><b><a href="https://github.com/iserbinov/site-flow-mapper">site-flow-mapper</a></b><span class="mono">TS · Playwright</span><p>Обходит сайт под авторизацией и строит карту экранов и переходов.</p></div>
+          <div class="tool"><b>TUI Doc Builder</b><span class="mono">Figma</span><p>Собирает страницы документации из Markdown с блоками правил, примеров, глоссария и ссылок</p></div>
+          <div class="tool"><b><a href="https://github.com/iserbinov/site-flow-mapper">site-flow-mapper</a></b><span class="mono">TS · Playwright</span><p>Обходит сайт под авторизацией и строит карту экранов и переходов</p></div>
         </div>
         </div>
 

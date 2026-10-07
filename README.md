@@ -5,4 +5,4 @@
 - `index.html` — главная
 - `projects/<кейс>/index.html` — страницы кейсов
 - `assets/` — картинки
-- `CNAME` — домен
+
