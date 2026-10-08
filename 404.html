@@ -13,7 +13,7 @@
 <link rel="preload" href="/assets/fonts/golos-text-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/css/base.css?v=20261011">
-<link rel="stylesheet" href="/assets/css/notfound.css?v=20261011">
+<link rel="stylesheet" href="/assets/css/notfound.css?v=20261012">
 <!-- Критичный минимум: фон и тема до загрузки стилей -->
 <script>
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
@@ -21,6 +21,54 @@
 <style>body{margin:0;background:#F6F6F4}@media (prefers-color-scheme:dark){html:not([data-theme="light"]) body{background:#0F0F0E}}html[data-theme="dark"] body{background:#0F0F0E}</style>
 </head>
 <body>
-<main class="nf"><p class="mono">404</p><h1>Такой страницы нет</h1><a href="/">← На&nbsp;главную</a></main>
+<div class="wrap" id="wrap">
+  <header class="bar mono">
+    <a class="brand" href="/">serbinov.com</a>
+    <nav aria-label="Основная">
+      <a href="/#work">Работа</a>
+      <a href="/#talks">Выступления</a>
+      <a href="/#about">Обо мне</a>
+      <a href="/#contact">Контакты</a>
+    </nav>
+    <span class="tg"><button class="toggle mono" id="themeToggle" aria-label="Переключить тему">тема: авто</button></span>
+  </header>
+
+  <main class="frame nf">
+    <section class="sheet nf-sheet" aria-labelledby="nfH">
+      <p class="label nf-tag">page/404&nbsp;· 0×0&nbsp;· detached</p>
+      <figure class="nf-art">
+        <svg viewBox="0 0 960 380" role="img" aria-label="Цифры 404 в виде чертежа компонента: две четвёрки подписаны как слоты, ноль как пустое состояние">
+          <rect class="d" x="24" y="24" width="912" height="332"/>
+          <rect class="h" x="20" y="20" width="8" height="8"/><rect class="h" x="932" y="20" width="8" height="8"/>
+          <rect class="h" x="20" y="352" width="8" height="8"/><rect class="h" x="932" y="352" width="8" height="8"/>
+          <line class="d" x1="24" y1="100" x2="936" y2="100"/>
+          <line class="d" x1="24" y1="300" x2="936" y2="300"/>
+          <text class="lab" x="40" y="94">cap</text>
+          <text class="lab" x="40" y="294">baseline</text>
+          <path class="g" d="M292 100 L150 246 L338 246 M292 100 L292 300"/>
+          <line class="d" x1="480" y1="84" x2="480" y2="316"/>
+          <line class="d" x1="380" y1="200" x2="580" y2="200"/>
+          <ellipse class="g" cx="480" cy="200" rx="84" ry="100"/>
+          <circle class="h" cx="480" cy="200" r="3"/>
+          <path class="g" d="M762 100 L620 246 L808 246 M762 100 L762 300"/>
+          <line class="l" x1="292" y1="100" x2="292" y2="60"/><circle class="p" cx="292" cy="100" r="3"/>
+          <text class="lab" x="300" y="62">4&nbsp;· слот</text>
+          <line class="l" x1="480" y1="100" x2="480" y2="60"/><circle class="p" cx="480" cy="100" r="3"/>
+          <text class="lab" x="488" y="62">0&nbsp;· пустое состояние</text>
+          <line class="l" x1="762" y1="100" x2="762" y2="60"/><circle class="p" cx="762" cy="100" r="3"/>
+          <text class="lab" x="770" y="62">4&nbsp;· слот</text>
+          <path class="l" d="M396 328 L564 328 M396 320 L396 336 M564 320 L564 336"/>
+          <text class="lab" x="480" y="348" text-anchor="middle">0 × 0</text>
+        </svg>
+        <figcaption class="nf-legend mono"><span><b>4</b> слот</span><span><b>0</b> пустое состояние</span><span><b>4</b> слот</span></figcaption>
+      </figure>
+      <h1 id="nfH">Этой страницы нет в&nbsp;<span class="nw">дизайн-системе</span></h1>
+      <p class="nf-lead">Ссылка ведёт на&nbsp;инстанс, у&nbsp;которого больше нет main component</p>
+      <a class="nf-back" href="/">← Вернуться к&nbsp;main component</a>
+      <div class="log nf-log mono"><span>breaking change</span><ul><li>Удалено: эта страница</li><li>Без&nbsp;деприкейта, простите</li><li>Миграция: на&nbsp;главную</li></ul></div>
+    </section>
+  </main>
+</div>
+<script src="/assets/js/theme.js?v=20261011"></script>
 </body>
 </html>
