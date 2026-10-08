@@ -99,14 +99,11 @@ section{padding-top:0}
 .row .static .co,.row .static .what{color:var(--muted)}
 .pubt{font:400 11px/1.9 var(--f-mono)!important;letter-spacing:.02em;color:var(--spec-text)!important}
 .what small{display:block;margin-top:6px;font:400 14px/1.5 var(--f-body);color:var(--muted)}
-.art .what small{display:block;margin-top:6px;font:400 14px/1.5 var(--f-body);color:var(--muted)}
 .cover{display:block;margin-top:10px;aspect-ratio:1.9/1;max-width:100%;background:var(--surface);border-radius:4px;position:relative}
 .cover .mono{position:absolute;left:10px;bottom:8px;font-size:10.5px;color:var(--muted)}
 #talks .static .what{color:var(--fg)}
 .conf{margin:var(--s5) 0 0;font-size:14px;color:var(--muted);max-width:72ch}
 .conf b{font-weight:500;color:var(--fg)}
-.pub .static .co{font:400 11px/1.9 var(--f-mono);letter-spacing:.02em;color:var(--spec-text)!important}
-.pub .static .what{color:var(--fg)!important}
 .row .static .what{font-size:16px}
 .brief{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.7fr) minmax(0,.9fr) 20px;gap:var(--s5) var(--s4);padding:4px 0 var(--s7)}
 .brief .img{grid-column:2/5;aspect-ratio:3/1;max-width:100%;background:var(--surface);border-radius:var(--r);position:relative}
@@ -149,7 +146,6 @@ a.row:hover .plus{color:var(--accent);transform:translateX(3px)}
 .g-row.ds .bar{background:var(--fg);opacity:1}
 .g-row.now .bar{background:var(--accent-fill);opacity:1}
 .g-row.mix .bar{opacity:1;background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 55%,var(--bg)) 50%,var(--fg) 50%)}
-.g-sc{position:absolute;font:400 11px/12px var(--f-mono);color:var(--fg);white-space:nowrap}
 .gantt-head{grid-column:1;grid-row:1;height:28px}
 .g-lab em{display:none!important}
 .g-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:var(--s5);font:400 11px var(--f-mono);color:var(--muted)}
@@ -192,7 +188,6 @@ footer{padding-top:0}
 @media (max-width:1100px){.skill{grid-template-columns:1fr}}
 @media (max-width:600px){.bar{row-gap:10px}.bar .brand{width:100%;margin-right:0}.bar nav{flex-wrap:wrap;gap:6px 16px;width:100%}.bar nav a{white-space:nowrap}.tg{gap:16px}}
 @media (max-width:820px){
-  .skill{grid-template-columns:1fr}
   .lede,.cta,.split{grid-template-columns:1fr}
   .row summary,.row .static{grid-template-columns:72px minmax(0,1fr) 20px;row-gap:4px}
   .row .what,.row .scale{grid-column:2/3}
@@ -202,7 +197,7 @@ footer{padding-top:0}
   .brief .cols{grid-template-columns:1fr}
   .gantt{grid-template-columns:1fr;padding-left:24px}
   .gantt::before{content:"";position:absolute;left:3px;top:6px;bottom:16px;width:1px;background:var(--fg)}
-  .g-track,.gantt-head,.g-sc,.g-legend{display:none}
+  .g-track,.gantt-head,.g-legend{display:none}
   .g-row .bar{display:none}
   .g-lab{position:relative;border-top:0;min-height:0;padding-bottom:16px}
   .g-lab::before{content:"";position:absolute;left:-24px;top:5px;width:7px;height:7px;box-sizing:border-box;border-radius:50%;background:var(--bg);border:1px solid var(--fg);z-index:1}

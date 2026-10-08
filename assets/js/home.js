@@ -21,10 +21,10 @@
     });
   }
 
-
   function draw(){
     svg.innerHTML='';
-    svg.style.display="none";const S=wrap.getBoundingClientRect(),W=S.width,H=wrap.scrollHeight;svg.style.display="";
+    // скрываем svg на время замера, чтобы он не растягивал страницу
+    svg.style.display='none';const S=wrap.getBoundingClientRect(),W=S.width,H=wrap.scrollHeight;svg.style.display='';
     svg.setAttribute('width',W);svg.setAttribute('height',H);svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
     const small=W<700;
     const E=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
@@ -36,7 +36,6 @@
       svg.insertBefore(E('rect',{class:'chipbg',x:bx,y:b.y-2,width:b.width+8+off,height:b.height+4}),t);
       if(sw){const s=E('rect',{class:'swc',x:bx+3,y:b.y,width:9,height:b.height});s.style.fill=sw}
     };
-    const pl=parseFloat(getComputedStyle(wrap).paddingLeft);
 
     // имя
     const n=R(name),b=R(bl),ns=getComputedStyle(name);
@@ -45,7 +44,6 @@
     label((n.x+n.r)/2,yd,Math.round(n.w)+' px','middle');
     E('path',{class:'d',d:`M${n.x} ${n.y}H${n.r}V${n.b}H${n.x}Z`});
     [[n.x,n.y],[n.r,n.y],[n.x,n.b],[n.r,n.b]].forEach(([x,y])=>E('rect',{class:'h',x:x-2.5,y:y-2.5,width:5,height:5}));
-    
     label(n.x,n.b+16,W<560?`type/display · ${Math.round(parseFloat(ns.fontSize))}/${Math.round(parseFloat(ns.lineHeight))}`:`type/display · Geologica ${ns.fontWeight} · ${Math.round(parseFloat(ns.fontSize))}/${Math.round(parseFloat(ns.lineHeight))} · −4.5%`);
     if(small)return;
 
@@ -91,8 +89,6 @@
     const sum=wrap.querySelector('.row summary');
     if(sum){
       const cols=getComputedStyle(sum).gridTemplateColumns.split(' ').map(parseFloat),r=R(sum);
-      let x=r.x;const y=r.y+4;
-      cols.slice(0,4).forEach((c,i)=>{x+=c+(i?16:0);});
       label(r.x,r.y+r.h-2,`grid ${cols.slice(0,4).map(Math.round).join(' / ')} · gap 16`,'start');
     }
   }
