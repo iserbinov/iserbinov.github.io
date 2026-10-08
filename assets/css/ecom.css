@@ -2,14 +2,14 @@
 
 /* ecom */
 .ds3{margin-top:var(--s5);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2)}
-.ds3 .ds{display:grid;gap:4px;padding:var(--s4);background:var(--surface);border-radius:12px}
+.ds3 .ds{display:grid;gap:4px;padding:var(--s4);background:var(--surface);border-radius:var(--r4)}
 .ds3 .ds b{font:400 19px/1.2 var(--f-display)}
 .ds3 .ds .mono{color:var(--muted);font-size:11px}
-.ds3 .base{grid-column:1/-1;padding:10px var(--s4);border-radius:12px;background:var(--fg);color:var(--bg);text-align:center}
+.ds3 .base{grid-column:1/-1;padding:10px var(--s4);border-radius:var(--r4);background:var(--fg);color:var(--bg);text-align:center}
 .anat{display:flex;flex-wrap:wrap;gap:var(--s2) 0;margin:var(--s4) 0}
 .anat .seg{display:grid;gap:6px;padding-right:2px}
 .anat .seg code{font:400 clamp(14px,1.6vw,18px)/1 var(--f-mono);background:var(--surface);padding:10px 8px;border-radius:0;white-space:nowrap}
-.anat .seg:first-child code{border-radius:8px 0 0 8px}.anat .seg:last-child code{border-radius:0 8px 8px 0}
+.anat .seg:first-child code{border-radius:var(--r3) 0 0 var(--r3)}.anat .seg:last-child code{border-radius:0 var(--r3) var(--r3) 0}
 .anat .seg.opt code{color:var(--muted)}
 .anat .seg i{font:400 11px/1.2 var(--f-mono);font-style:normal;color:var(--spec-text);padding-left:8px;border-left:1px solid var(--spec)}
 .ttab{display:grid;margin-top:var(--s4);max-width:62ch}
@@ -17,7 +17,7 @@
 .ttab div:first-child{border-top:1px solid var(--line)}
 .ttab .mono{font-size:12.5px}
 .dsc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
-.dsc .card{padding:var(--s4);border-radius:12px;background:var(--surface)}
+.dsc .card{padding:var(--s4);border-radius:var(--r4);background:var(--surface)}
 .dsc .ch{display:grid;gap:2px;margin-bottom:var(--s3)}
 .dsc .ch b{font:400 21px/1.2 var(--f-display)}
 .dsc .ch .mono{color:var(--muted);font-size:11px}
