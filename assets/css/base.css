@@ -211,3 +211,6 @@ footer{padding-top:0}
 
 .brief .img img,.ccover img,.cover img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .brief .img,.ccover,.cover{overflow:hidden}
+main:focus{outline:none}
+.skip{position:absolute;left:var(--s4);top:var(--s2);z-index:10;padding:var(--s2) var(--s4);background:var(--fg);color:var(--bg);font:500 14px var(--f-body);text-decoration:none;border-radius:var(--r2);transform:translateY(-200%)}
+.skip:focus-visible{transform:none}
