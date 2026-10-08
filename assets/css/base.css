@@ -34,7 +34,7 @@
 html{scroll-behavior:smooth}
 body{background:var(--canvas);color:var(--fg);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;margin:0}
 .wrap{max-width:1190px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:var(--s6) var(--s7);position:relative}
-a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--line)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--muted)}
 a:hover{text-decoration-color:var(--fg)}
 :focus-visible{outline:2px solid var(--spec-text);outline-offset:3px}
 .mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.02em}

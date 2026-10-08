@@ -11,7 +11,7 @@
 .nf-art .lab{fill:var(--spec-text);font:400 14px var(--f-mono);letter-spacing:.02em}
 .nf-legend{display:none;flex-wrap:wrap;gap:var(--s2) var(--s4);margin-top:var(--s3);color:var(--spec-text)}
 .nf-legend b{font-weight:500;color:var(--fg);margin-right:var(--s1)}
-.nf h1{font:300 clamp(32px,5vw,56px)/1.1 var(--f-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+.nf h1{font:300 clamp(28px,5vw,56px)/1.1 var(--f-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 .nf-lead{margin:0;color:var(--muted);max-width:52ch;text-wrap:pretty}
 .nf-back{justify-self:start;font:500 16px var(--f-body);color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);padding-block:var(--s3)}
 .nf-back:hover{text-decoration-color:var(--fg)}
