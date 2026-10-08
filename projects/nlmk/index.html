@@ -49,14 +49,14 @@
       <div class="kpi"><b>46 / 40</b><span>базовых компонентов в&nbsp;дизайне и&nbsp;в&nbsp;коде</span></div>
       <div class="kpi"><b>280+</b><span>версий пакета в&nbsp;npm</span></div>
     </div>
-    <div class="chap"><h2>Контекст и&nbsp;задача</h2><p>Дизайн-система 1.0 в&nbsp;НЛМК&nbsp;— перекрашенный Material UI. Задача&nbsp;— уйти от&nbsp;него к&nbsp;собственной дизайн-системе 2.0 для&nbsp;сложных производственных интерфейсов, MES-систем</p></div>
-    <div class="chap"><h2>Команда и&nbsp;роль</h2><div><p>2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я. На&nbsp;мне&nbsp;— дизайн, архитектура дизайн-системы, дизайн-лидерство и&nbsp;ресурсы</p><p>Нейминг, версионирование и&nbsp;документацию прорабатывали вместе с&nbsp;разработчиками</p></div></div>
+    <div class="chap"><h2>Контекст и&nbsp;задача</h2><p>Дизайн-система 1.0 в&nbsp;НЛМК была перекрашенным Material UI. Задача: уйти от&nbsp;него к&nbsp;собственной дизайн-системе 2.0 для&nbsp;сложных производственных интерфейсов, MES-систем</p></div>
+    <div class="chap"><h2>Команда и&nbsp;роль</h2><div><p>2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я. На&nbsp;мне: дизайн, архитектура дизайн-системы, дизайн-лидерство и&nbsp;ресурсы</p><p>Нейминг, версионирование и&nbsp;документацию прорабатывали вместе с&nbsp;разработчиками</p></div></div>
     <div class="chap wide"><h2>Подход</h2><div>
       <p>Начал с&nbsp;исследования: поездки на&nbsp;заводы к&nbsp;людям, которые работают с&nbsp;интерфейсами каждый день, запросы от&nbsp;дизайнеров, разбор дизайн-систем Сбера, Яндекса и&nbsp;Ozon. По&nbsp;итогам составил план из&nbsp;11&nbsp;этапов</p>
       <div class="plan" role="list" aria-label="Этапы создания дизайн-системы">
         <div class="pl-head" aria-hidden="true"><span></span><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span></div>
         <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">01</span><b>Исследование</b><span class="pl-t">Поездки на&nbsp;заводы, запросы дизайнеров</span></span><i class="pl-bar" style="grid-column:2/3"></i></div>
-        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">02</span><b>Токены</b><span class="pl-t">В&nbsp;дизайне, варианты компонентов&nbsp;— во&nbsp;фронтенде</span></span><i class="pl-bar" style="grid-column:3/4"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">02</span><b>Токены</b><span class="pl-t">В&nbsp;дизайне, варианты компонентов во&nbsp;фронтенде</span></span><i class="pl-bar" style="grid-column:3/4"></i></div>
         <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">03</span><b>Кит компонентов</b><span class="pl-t">Разработка во&nbsp;фронтенде параллельно</span></span><i class="pl-bar" style="grid-column:4/5"></i></div>
         <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">04</span><b>Тестирование</b></span><i class="pl-bar" style="grid-column:5/6"></i></div>
         <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">05</span><b>Обратная связь</b><span class="pl-t">Устная и&nbsp;по&nbsp;метрикам</span></span><i class="pl-bar" style="grid-column:6/7"></i></div>
@@ -70,9 +70,9 @@
       <div class="g-legend" aria-hidden="true"><span><i style="background:var(--fg)"></i>этап</span><span><i style="background:color-mix(in srgb,var(--muted) 55%,var(--bg))"></i>параллельный процесс</span><span><i style="background:var(--accent-fill)"></i>постоянно</span></div>
     </div></div>
     <div class="chap"><h2>Система</h2><div>
-      <p>Сделали 2&nbsp;параллельные дизайн-системы. Внутренняя&nbsp;— полноценная: основы, продуктовые компоненты, паттерны, иконки, гайды. Развивается вместе с&nbsp;внутренними системами НЛМК. Открытая&nbsp;— с&nbsp;открытым кодом, о&nbsp;ней ниже</p>
+      <p>Сделали 2&nbsp;параллельные дизайн-системы. Внутренняя: основы, продуктовые компоненты, паттерны, иконки, гайды. Развивается вместе с&nbsp;внутренними системами НЛМК. Открытая: с&nbsp;открытым кодом, о&nbsp;ней ниже</p>
       <h3>Токены</h3>
-      <p>Ключевое решение&nbsp;— токены на&nbsp;стороне дизайна, варианты компонентов на&nbsp;стороне фронтенда. Токены собраны в&nbsp;Tokens Studio&nbsp;— нативных токенов в&nbsp;Figma тогда ещё не&nbsp;было. Токены в&nbsp;4&nbsp;уровня: базовый цвет → палитра от&nbsp;50 до&nbsp;900 → семантический токен → токен компонента. Например, <code>base.primary-blue</code> → <code>primary-blue/700</code> → <code>primary-blue.default</code> → <code>ac.button.main-bg-def</code>. Так же&nbsp;устроены размеры: <code>size.base</code> 16 → <code>size.m</code> 36 → <code>input.m.height</code>. Токены хранятся в&nbsp;репозитории в&nbsp;JSON, у&nbsp;каждого есть описание</p>
+      <p>Ключевое решение: токены на&nbsp;стороне дизайна, варианты компонентов на&nbsp;стороне фронтенда. Токены собраны в&nbsp;Tokens Studio, потому что нативных токенов в&nbsp;Figma тогда ещё не&nbsp;было. Токены в&nbsp;4&nbsp;уровня: базовый цвет → палитра от&nbsp;50 до&nbsp;900 → семантический токен → токен компонента. Например, <code>base.primary-blue</code> → <code>primary-blue/700</code> → <code>primary-blue.default</code> → <code>ac.button.main-bg-def</code>. Так же&nbsp;устроены размеры: <code>size.base</code> 16 → <code>size.m</code> 36 → <code>input.m.height</code>. Токены хранятся в&nbsp;репозитории в&nbsp;JSON, у&nbsp;каждого есть описание</p>
       <figure class="cfig slide"><img src="/assets/nlmk/tokens.webp" alt="Схема токенов: цвет и размеры от базового значения до токена компонента" width="1920" height="1474" loading="lazy" decoding="async"><figcaption class="mono">Цепочки токенов цвета и&nbsp;размеров</figcaption></figure>
       <h3>Компоненты</h3>
       <p>46&nbsp;базовых компонентов в&nbsp;дизайне и&nbsp;40 в&nbsp;коде. Сложные компоненты собраны из&nbsp;состояний и&nbsp;вариантов: у&nbsp;TreeList их больше 200</p>
@@ -82,17 +82,17 @@
       <figure class="cfig slide"><img src="/assets/nlmk/digest.webp" alt="Пример рассылки об обновлении дизайн-системы 2.0" width="1920" height="1058" loading="lazy" decoding="async"><figcaption class="mono">Рассылка об&nbsp;осеннем обновлении</figcaption></figure>
     </div></div>
     <div class="chap"><h2>Открытая часть</h2><div>
-      <p>Открытая дизайн-система&nbsp;— для&nbsp;дизайнеров и&nbsp;разработчиков вне НЛМК. Лендинг <a href="https://ds.nlmk.com">ds.nlmk.com</a>, UI-кит в&nbsp;Figma, Storybook, пакет <code>@nlmk/ds-2.0</code> в&nbsp;npm, репозиторий на&nbsp;GitHub, лицензия MIT. В&nbsp;ней логотип, палитра с&nbsp;генерацией по&nbsp;HEX-коду бренда, типографика на&nbsp;PT Root UI, иконки, модульная сетка, светлая и&nbsp;тёмная темы</p>
+      <p>Открытая дизайн-система: для&nbsp;дизайнеров и&nbsp;разработчиков вне НЛМК. Лендинг <a href="https://ds.nlmk.com">ds.nlmk.com</a>, UI-кит в&nbsp;Figma, Storybook, пакет <code>@nlmk/ds-2.0</code> в&nbsp;npm, репозиторий на&nbsp;GitHub, лицензия MIT. В&nbsp;ней логотип, палитра с&nbsp;генерацией по&nbsp;HEX-коду бренда, типографика на&nbsp;PT Root UI, иконки, модульная сетка, светлая и&nbsp;тёмная темы</p>
       <p class="links mono"><a href="https://www.figma.com/@nlmk">UI-кит в&nbsp;Figma ↗</a><a href="https://nlmk-group.github.io/ds-2.0/?path=/docs/introduction-welcome--docs">Storybook ↗</a><a href="https://www.npmjs.com/package/@nlmk/ds-2.0">npm ↗</a><a href="https://github.com/nlmk-group/ds-2.0">GitHub ↗</a></p>
-      <figure class="cfig slide"><img src="/assets/nlmk/open-source.webp" alt="Открытая дизайн-система: файл в Figma Community и Storybook" width="1920" height="642" loading="lazy" decoding="async"><figcaption class="mono">Для&nbsp;дизайнера&nbsp;— Figma, для&nbsp;разработчика&nbsp;— Storybook</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/open-source.webp" alt="Открытая дизайн-система: файл в Figma Community и Storybook" width="1920" height="642" loading="lazy" decoding="async"><figcaption class="mono">Для&nbsp;дизайнера Figma, для&nbsp;разработчика Storybook</figcaption></figure>
     </div></div>
     <div class="chap"><h2>Результат</h2><div><ul>
-      <li>Экономия от&nbsp;внедрения&nbsp;— около 1&nbsp;млн долларов в&nbsp;год, оценка</li>
-      <li>Индекс удовлетворённости дизайн-системой&nbsp;— 8,1</li>
+      <li>Экономия от&nbsp;внедрения: около 1&nbsp;млн долларов в&nbsp;год, оценка</li>
+      <li>Индекс удовлетворённости дизайн-системой: 8,1</li>
       <li>2&nbsp;дизайн-системы: внутренняя и&nbsp;открытая</li>
       <li>Витрина компонентов в&nbsp;Figma</li>
-      <li>Пакет живёт после моего ухода: в&nbsp;npm больше 280&nbsp;версий, последние&nbsp;— в&nbsp;2026&nbsp;году</li>
-      <li>Свидетельство о&nbsp;государственной регистрации программы для&nbsp;ЭВМ №&nbsp;2023685643 «Дизайн-система НЛМК» от&nbsp;29&nbsp;ноября 2023&nbsp;г. Правообладатель&nbsp;— ПАО «НЛМК», авторы&nbsp;— 2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я</li>
+      <li>Пакет живёт после моего ухода: в&nbsp;npm больше 280&nbsp;версий, последние в&nbsp;2026&nbsp;году</li>
+      <li>Свидетельство о&nbsp;государственной регистрации программы для&nbsp;ЭВМ №&nbsp;2023685643 «Дизайн-система НЛМК» от&nbsp;29&nbsp;ноября 2023&nbsp;г. Правообладатель: ПАО «НЛМК», авторы: 2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я</li>
     </ul>
       <figure class="cfig cert"><a href="/assets/nlmk/ds-nlmk.pdf"><img src="/assets/nlmk/ds-nlmk.webp" alt="Свидетельство о регистрации программы для ЭВМ «Дизайн-система НЛМК»" width="1192" height="1684" loading="lazy" decoding="async"></a><figcaption class="mono"><a href="/assets/nlmk/ds-nlmk.pdf">Свидетельство, PDF</a> · <a href="https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&amp;DocNumber=2023685643">реестр ФИПС</a></figcaption></figure></div></div>
   </section></div>
