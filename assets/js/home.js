@@ -119,7 +119,7 @@
     E('line',{class:'d',x1:n.r,y1:n.y,x2:xt-5,y2:n.y});
     label(xt,sr.y+st/2,Math.round(st)+'','middle');
     E('path',{class:'d',d:`M${sr.x} ${sr.y+rad} A${rad} ${rad} 0 0 1 ${sr.x+rad} ${sr.y}`});
-    label(sr.x+rad+8,sr.y+14,'radius '+Math.round(rad)+' · smooth 0.6','start');
+    label(sr.x+rad+8,sr.y+14,'radius/card · '+Math.round(rad),'start');
 
     // аннотации
     wrap.querySelectorAll('[data-a]').forEach(el=>{
