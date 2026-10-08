@@ -9,9 +9,9 @@
 <meta property="og:description" content="Дизайн-система 2.0 НЛМК с нуля.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/jpeg" href="/assets/image-ava.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@250;300;400;500&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/assets/fonts/geologica-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/golos-text-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script>
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
@@ -333,7 +333,7 @@ figure{margin:0}
       <div><span class="mono">Роль</span>Дизайнер и&nbsp;создатель дизайн-системы</div>
       <div><span class="mono">Сайт</span><a href="https://ds.nlmk.com">ds.nlmk.com</a></div>
     </div>
-    <figure class="ccover"><img src="/assets/nlmk/Cover.png" alt="Дизайн-система 2.0 НЛМК" width="2400" height="1323" fetchpriority="high"></figure>
+    <figure class="ccover"><img src="/assets/nlmk/Cover.webp" alt="Дизайн-система 2.0 НЛМК" width="1600" height="882" fetchpriority="high"></figure>
     <div class="ckpis">
       <div class="kpi"><b>$1&nbsp;млн</b><span>экономия в&nbsp;год от&nbsp;внедрения, оценка</span></div>
       <div class="kpi"><b>8,1</b><span>индекс удовлетворённости дизайн-системой</span></div>
@@ -364,18 +364,18 @@ figure{margin:0}
       <p>Сделали 2&nbsp;параллельные дизайн-системы. Внутренняя&nbsp;— полноценная: основы, продуктовые компоненты, паттерны, иконки, гайды. Развивается вместе с&nbsp;внутренними системами НЛМК. Открытая&nbsp;— с&nbsp;открытым кодом, о&nbsp;ней ниже</p>
       <h3>Токены</h3>
       <p>Ключевое решение&nbsp;— токены на&nbsp;стороне дизайна, варианты компонентов на&nbsp;стороне фронтенда. Токены собраны в&nbsp;Tokens Studio&nbsp;— нативных токенов в&nbsp;Figma тогда ещё не&nbsp;было. Токены в&nbsp;4&nbsp;уровня: базовый цвет → палитра от&nbsp;50 до&nbsp;900 → семантический токен → токен компонента. Например, <code>base.primary-blue</code> → <code>primary-blue/700</code> → <code>primary-blue.default</code> → <code>ac.button.main-bg-def</code>. Так же&nbsp;устроены размеры: <code>size.base</code> 16 → <code>size.m</code> 36 → <code>input.m.height</code>. Токены хранятся в&nbsp;репозитории в&nbsp;JSON, у&nbsp;каждого есть описание</p>
-      <figure class="cfig slide"><img src="/assets/nlmk/tokens.jpg" alt="Схема токенов: цвет и размеры от базового значения до токена компонента" width="1948" height="1495" loading="lazy"><figcaption class="mono">Цепочки токенов цвета и&nbsp;размеров</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/tokens.webp" alt="Схема токенов: цвет и размеры от базового значения до токена компонента" width="1920" height="1474" loading="lazy" decoding="async"><figcaption class="mono">Цепочки токенов цвета и&nbsp;размеров</figcaption></figure>
       <h3>Компоненты</h3>
       <p>46&nbsp;базовых компонентов в&nbsp;дизайне и&nbsp;40 в&nbsp;коде. Сложные компоненты собраны из&nbsp;состояний и&nbsp;вариантов: у&nbsp;TreeList их больше 200</p>
-      <figure class="cfig slide"><img src="/assets/nlmk/treelist.jpg" alt="Варианты компонента TreeList" width="2400" height="1323" loading="lazy"><figcaption class="mono">TreeList: уровни вложенности, выбор, ошибки, предупреждения</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/treelist.webp" alt="Варианты компонента TreeList" width="1920" height="1058" loading="lazy" decoding="async"><figcaption class="mono">TreeList: уровни вложенности, выбор, ошибки, предупреждения</figcaption></figure>
       <h3>Версионирование и&nbsp;обновления</h3>
       <p>Общий номер версии для&nbsp;дизайна и&nbsp;кода и&nbsp;отдельный суффикс для&nbsp;каждой стороны: <code>v02.11.98.des34</code> и&nbsp;<code>v02.11.98.fe67</code>. Об&nbsp;обновлениях команды узнают из&nbsp;рассылки: новые компоненты, доработки, ссылки на&nbsp;код и&nbsp;документацию</p>
-      <figure class="cfig slide"><img src="/assets/nlmk/digest.jpg" alt="Пример рассылки об обновлении дизайн-системы 2.0" width="2400" height="1323" loading="lazy"><figcaption class="mono">Рассылка об&nbsp;осеннем обновлении</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/digest.webp" alt="Пример рассылки об обновлении дизайн-системы 2.0" width="1920" height="1058" loading="lazy" decoding="async"><figcaption class="mono">Рассылка об&nbsp;осеннем обновлении</figcaption></figure>
     </div></div>
     <div class="chap"><h2>Открытая часть</h2><div>
       <p>Открытая дизайн-система&nbsp;— для&nbsp;дизайнеров и&nbsp;разработчиков вне НЛМК. Лендинг <a href="https://ds.nlmk.com">ds.nlmk.com</a>, UI-кит в&nbsp;Figma, Storybook, пакет <code>@nlmk/ds-2.0</code> в&nbsp;npm, репозиторий на&nbsp;GitHub, лицензия MIT. В&nbsp;ней логотип, палитра с&nbsp;генерацией по&nbsp;HEX-коду бренда, типографика на&nbsp;PT Root UI, иконки, модульная сетка, светлая и&nbsp;тёмная темы</p>
       <p class="links mono"><a href="https://www.figma.com/@nlmk">UI-кит в&nbsp;Figma ↗</a><a href="https://nlmk-group.github.io/ds-2.0/?path=/docs/introduction-welcome--docs">Storybook ↗</a><a href="https://www.npmjs.com/package/@nlmk/ds-2.0">npm ↗</a><a href="https://github.com/nlmk-group/ds-2.0">GitHub ↗</a></p>
-      <figure class="cfig slide"><img src="/assets/nlmk/open-source.jpg" alt="Открытая дизайн-система: файл в Figma Community и Storybook" width="2400" height="802" loading="lazy"><figcaption class="mono">Для&nbsp;дизайнера&nbsp;— Figma, для&nbsp;разработчика&nbsp;— Storybook</figcaption></figure>
+      <figure class="cfig slide"><img src="/assets/nlmk/open-source.webp" alt="Открытая дизайн-система: файл в Figma Community и Storybook" width="1920" height="642" loading="lazy" decoding="async"><figcaption class="mono">Для&nbsp;дизайнера&nbsp;— Figma, для&nbsp;разработчика&nbsp;— Storybook</figcaption></figure>
     </div></div>
     <div class="chap"><h2>Результат</h2><div><ul>
       <li>Экономия от&nbsp;внедрения&nbsp;— около 1&nbsp;млн долларов в&nbsp;год, оценка</li>
@@ -385,7 +385,7 @@ figure{margin:0}
       <li>Пакет живёт после моего ухода: в&nbsp;npm больше 280&nbsp;версий, последние&nbsp;— в&nbsp;2026&nbsp;году</li>
       <li>Свидетельство о&nbsp;государственной регистрации программы для&nbsp;ЭВМ №&nbsp;2023685643 «Дизайн-система НЛМК» от&nbsp;29&nbsp;ноября 2023&nbsp;г. Правообладатель&nbsp;— ПАО «НЛМК», авторы&nbsp;— 2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я</li>
     </ul>
-      <figure class="cfig cert"><a href="/assets/nlmk/ds-nlmk.pdf"><img src="/assets/nlmk/ds-nlmk.png" alt="Свидетельство о регистрации программы для ЭВМ «Дизайн-система НЛМК»" width="1192" height="1684" loading="lazy"></a><figcaption class="mono"><a href="/assets/nlmk/ds-nlmk.pdf">Свидетельство, PDF</a> · <a href="https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&amp;DocNumber=2023685643">реестр ФИПС</a></figcaption></figure></div></div>
+      <figure class="cfig cert"><a href="/assets/nlmk/ds-nlmk.pdf"><img src="/assets/nlmk/ds-nlmk.webp" alt="Свидетельство о регистрации программы для ЭВМ «Дизайн-система НЛМК»" width="1192" height="1684" loading="lazy" decoding="async"></a><figcaption class="mono"><a href="/assets/nlmk/ds-nlmk.pdf">Свидетельство, PDF</a> · <a href="https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&amp;DocNumber=2023685643">реестр ФИПС</a></figcaption></figure></div></div>
   </section></div>
 
   <footer id="contact">

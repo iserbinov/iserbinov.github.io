@@ -9,9 +9,9 @@
 <meta property="og:description" content="Одна система токенов для трёх дизайн-систем ecom.tech.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/jpeg" href="/assets/image-ava.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@250;300;400;500&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/assets/fonts/geologica-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/golos-text-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script>
 (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
@@ -366,7 +366,7 @@ figure{margin:0}
       <div><span class="mono">Роль</span>Лид дизайн-системы</div>
       <div><span class="mono">Продукты</span>Самокат, Мегамаркет</div>
     </div>
-    <figure class="ccover"><img src="/assets/ecom-cover.jpeg" alt="ecom.tech" width="2400" height="800" fetchpriority="high"></figure>
+    <figure class="ccover"><img src="/assets/ecom-cover.webp" alt="ecom.tech" width="1600" height="533" fetchpriority="high"></figure>
     <div class="ckpis">
       <div class="kpi"><b>70+</b><span>бэк-офисных продуктов на&nbsp;дизайн-системах</span></div>
       <div class="kpi"><b>3&nbsp;→&nbsp;1</b><span>3&nbsp;дизайн-системы на&nbsp;одной системе токенов</span></div>
@@ -381,7 +381,7 @@ figure{margin:0}
         <div class="ds" role="listitem"><b>Spine</b><span class="mono">Vue · SwiftUI · Compose</span></div>
         <div class="base"><span class="mono">единая система токенов</span></div>
       </div>
-      <figure class="cfig"><img src="/assets/ecom/ds-map.jpg" alt="Карта дизайн-систем ecom.tech и их стеков" width="1920" height="1080" loading="lazy"><figcaption class="mono">Дизайн-системы ecom.tech: бэк-офис и&nbsp;CX</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/ds-map.webp" alt="Карта дизайн-систем ecom.tech и их стеков" width="1920" height="1080" loading="lazy" decoding="async"><figcaption class="mono">Дизайн-системы ecom.tech: бэк-офис и&nbsp;CX</figcaption></figure>
     </div></div>
 
     <div class="chap"><h2>Проблема</h2><div><p>3&nbsp;независимые дизайн-системы давали 4&nbsp;проблемы: UX и&nbsp;UI расходились между продуктами, решения не&nbsp;согласовывались, поддержка стоила дорого, командам было сложно переходить между системами</p>
@@ -396,7 +396,7 @@ figure{margin:0}
       <div class="anat" aria-label="Устройство имени токена">
         <span class="seg"><code>--color</code><i>категория</i></span><span class="seg opt"><code>-notification</code><i>специализация</i></span><span class="seg"><code>-background</code><i>свойство</i></span><span class="seg"><code>-brand</code><i>роль</i></span><span class="seg"><code>-strong</code><i>вариант</i></span><span class="seg"><code>-hover</code><i>состояние</i></span>
       </div>
-      <figure class="cfig"><img src="/assets/ecom/token-anatomy.jpg" alt="Структура семантических токенов цвета: категория, специализация, свойство, роль, вариант, состояние" width="1120" height="608" loading="lazy"><figcaption class="mono">Все значения каждой части имени токена</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/token-anatomy.webp" alt="Структура семантических токенов цвета: категория, специализация, свойство, роль, вариант, состояние" width="1120" height="608" loading="lazy" decoding="async"><figcaption class="mono">Все значения каждой части имени токена</figcaption></figure>
       <p>Из&nbsp;этих частей получаются токены вроде <code>--color-background-brand-strong-hover</code> или <code>--color-text-on-strong</code>. Специализация нужна для&nbsp;исключений: например, в&nbsp;тёмной теме фон нотификации темнее, чем у&nbsp;других компонентов</p>
 
       <h3>Размеры, отступы, радиусы, шрифты</h3>
@@ -410,11 +410,11 @@ figure{margin:0}
 
       <h3>Темы</h3>
       <p>Перестроили токены под&nbsp;несколько тем и&nbsp;вынесли все темы на&nbsp;отдельную страницу в&nbsp;Storybook. К&nbsp;токенам написали документацию для&nbsp;всех участников команд</p>
-      <figure class="cfig"><img src="/assets/ecom/themes.jpg" alt="Одни токены — разные темы в Rampa и Spine" width="1920" height="1080" loading="lazy"><figcaption class="mono">Одни токены, разные темы: Rampa и&nbsp;Spine</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/themes.webp" alt="Одни токены — разные темы в Rampa и Spine" width="1920" height="1080" loading="lazy" decoding="async"><figcaption class="mono">Одни токены, разные темы: Rampa и&nbsp;Spine</figcaption></figure>
 
       <h3>Анимация</h3>
       <p>До&nbsp;лета 2024&nbsp;года анимации в&nbsp;дизайн-системах не&nbsp;было. Завели токены функций переходов и&nbsp;таймингов и&nbsp;описали, когда что применять. Анимированные компоненты, переходы и&nbsp;микровзаимодействия появились в&nbsp;Funbox, Rampa и&nbsp;Spine</p>
-      <figure class="cfig"><img src="/assets/ecom/animation.jpg" alt="Анимированные компоненты в Funbox, Rampa и Spine" width="1920" height="1080" loading="lazy"><figcaption class="mono">Анимация в&nbsp;продуктах на&nbsp;Funbox, Rampa и&nbsp;Spine</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/animation.webp" alt="Анимированные компоненты в Funbox, Rampa и Spine" width="1920" height="1080" loading="lazy" decoding="async"><figcaption class="mono">Анимация в&nbsp;продуктах на&nbsp;Funbox, Rampa и&nbsp;Spine</figcaption></figure>
       <div class="ttab">
         <div><span class="mono">ease-in-out · 500&nbsp;мс</span><span>движение и&nbsp;выталкивание, вариант по&nbsp;умолчанию</span></div>
         <div><span class="mono">ease-out · 500&nbsp;мс</span><span>появление элемента</span></div>
@@ -443,9 +443,9 @@ figure{margin:0}
         <div role="row"><b role="cell">Funbox</b><span role="cell">7,09</span><span role="cell">7,8</span></div>
       </div>
       <h3>Один фундамент&nbsp;— разные продукты</h3>
-      <figure class="cfig"><img src="/assets/ecom/products-1.jpg" alt="Веб-интерфейсы продавцов на общих токенах" width="1920" height="565" loading="lazy"><figcaption class="mono">Инструменты для&nbsp;продавцов: пакетная обработка и&nbsp;виртуальная фотосъёмка</figcaption></figure>
-      <figure class="cfig"><img src="/assets/ecom/products-2.jpg" alt="Мобильные интерфейсы склада и курьеров на общих токенах" width="1860" height="700" loading="lazy"><figcaption class="mono">Мобильные приложения склада и&nbsp;доставки, светлая и&nbsp;тёмная темы</figcaption></figure>
-      <figure class="cfig"><img src="/assets/ecom/products-3.jpg" alt="Веб-интерфейсы бэк-офиса на общих токенах" width="1920" height="560" loading="lazy"><figcaption class="mono">Бэк-офис: ассортимент и&nbsp;планирование смен</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/products-1.webp" alt="Веб-интерфейсы продавцов на общих токенах" width="1920" height="565" loading="lazy" decoding="async"><figcaption class="mono">Инструменты для&nbsp;продавцов: пакетная обработка и&nbsp;виртуальная фотосъёмка</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/products-2.webp" alt="Мобильные интерфейсы склада и курьеров на общих токенах" width="1860" height="700" loading="lazy" decoding="async"><figcaption class="mono">Мобильные приложения склада и&nbsp;доставки, светлая и&nbsp;тёмная темы</figcaption></figure>
+      <figure class="cfig"><img src="/assets/ecom/products-3.webp" alt="Веб-интерфейсы бэк-офиса на общих токенах" width="1920" height="560" loading="lazy" decoding="async"><figcaption class="mono">Бэк-офис: ассортимент и&nbsp;планирование смен</figcaption></figure>
       <p class="links mono"><a href="https://vc.ru/design/2653795-read-only-v-dizajn-sisteme">Статья: Read-only в&nbsp;дизайн-системе ↗</a><a href="/#talks">Доклад на&nbsp;ULCAMP’25 и&nbsp;воркшоп в&nbsp;Bang Bang Education</a></p>
     </div></div>
     <div class="more"><a class="go" href="https://t.me/ivanserbinov">Написать в&nbsp;Telegram ↗</a></div>
