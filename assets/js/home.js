@@ -53,7 +53,7 @@
     const sh=document.getElementById('specimen'),sr=R(sh),scs=getComputedStyle(sh),sp=parseFloat(scs.paddingLeft),st=parseFloat(scs.paddingTop),rad=parseFloat(scs.borderTopLeftRadius);
     const ym=n.y+n.h*.3;E('line',{x1:sr.x,y1:ym,x2:sr.x+sp,y2:ym});label(sr.x+sp/2,ym,Math.round(sp)+'','middle');
     E('line',{class:'d',x1:sr.x,y1:b.y,x2:sr.r,y2:b.y});label(sr.r-8,b.y,'baseline','end');
-    const xt=sr.r-sp/2;E('line',{x1:xt,y1:sr.y,x2:xt,y2:sr.y+st});label(xt,sr.y+st/2,Math.round(st)+'','middle');
+    const xt=n.r-sp/2;E('line',{x1:xt,y1:sr.y,x2:xt,y2:sr.y+st});label(xt,sr.y+st/2,Math.round(st)+'','middle');
     E('path',{class:'d',d:`M${sr.x} ${sr.y+rad} A${rad} ${rad} 0 0 1 ${sr.x+rad} ${sr.y}`});
     label(sr.x+rad+8,sr.y+14,'radius '+Math.round(rad)+' · smooth 0.6','start');
 
