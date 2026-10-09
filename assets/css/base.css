@@ -78,6 +78,11 @@ a:hover{text-decoration-color:var(--fg)}
 /* sections */
 section{padding-top:0}
 .frame{margin-top:var(--s7)}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px var(--s4);padding-block:16px;border-bottom:1px solid var(--line)}
+.tool:first-of-type{border-top:1px solid var(--line)}
+.tool b{font:400 18px/1.3 var(--f-display);letter-spacing:-.01em}
+.tool p{grid-column:1/-1;margin:0;color:var(--muted);font-size:15px;max-width:52ch}
+.tool .mono{color:var(--muted);align-self:baseline}
 .sheet{background:var(--bg);border-radius:var(--r-card);padding:clamp(20px,6.7vw,80px);position:relative;box-shadow:0 0 0 1px var(--edge),var(--shadow)}
 .head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--fg)}
 .head h2{margin:0;font:400 13px/1 var(--f-mono);letter-spacing:.08em}
@@ -159,11 +164,6 @@ a.row:hover .plus{color:var(--accent);transform:translateX(3px)}
 .skill b{white-space:nowrap;font:300 19px/1.3 var(--f-display);letter-spacing:-.01em}
 .skill.core b{font-weight:400}
 .skill span{font:400 12px/1.6 var(--f-mono);color:var(--muted)}
-.tool{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px var(--s4);padding-block:16px;border-bottom:1px solid var(--line)}
-.tool:first-of-type{border-top:1px solid var(--line)}
-.tool b{font:400 18px/1.3 var(--f-display);letter-spacing:-.01em}
-.tool p{grid-column:1/-1;margin:0;color:var(--muted);font-size:15px;max-width:52ch}
-.tool .mono{color:var(--muted);align-self:baseline}
 
 footer{padding-top:0}
 .cta{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s7);align-items:center}
@@ -211,6 +211,7 @@ footer{padding-top:0}
 .brief .img img,.ccover img,.cover img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .brief .img,.ccover,.cover{overflow:hidden}
 main:focus{outline:none}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip{position:absolute;left:var(--s4);top:var(--s2);z-index:10;padding:var(--s2) var(--s4);background:var(--fg);color:var(--bg);font:500 14px var(--f-body);text-decoration:none;border-radius:var(--r2);transform:translateY(-200%)}
 .skip:focus-visible{transform:none}
 
