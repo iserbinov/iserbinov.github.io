@@ -48,7 +48,6 @@ a:hover{text-decoration-color:var(--fg)}
 .ov rect.chipbg{fill:var(--tag);rx:var(--r1)}
 .ov rect.swc{stroke:var(--on-spec);stroke-width:1}
 .ov text{fill:var(--tagtext);font:500 10.5px var(--f-mono);letter-spacing:.03em}
-.nospec .ov{opacity:0}
 
 /* bar */
 .bar{background:var(--bg);border-radius:var(--r5);box-shadow:0 0 0 1px var(--edge),var(--shadow);padding:10px 12px 10px 20px;display:flex;justify-content:flex-start;align-items:center;gap:var(--s4);flex-wrap:wrap;color:var(--muted)}

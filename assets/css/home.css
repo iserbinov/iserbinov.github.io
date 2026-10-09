@@ -1,6 +1,7 @@
 
 .fname{display:flex;justify-content:space-between;gap:12px;color:var(--spec-text);padding:0 4px 8px;transition:opacity .25s}
-.nospec .fname{opacity:0}
+/* по умолчанию разметка только на первом экране, кнопка включает её на всей странице */
+.wrap:not(.spec-all) .frame:not(.intro) .fname{opacity:0}
 .what small{display:block;margin-top:6px;font:400 14px/1.5 var(--f-body);color:var(--muted)}
 .more .soon{font:500 14px var(--f-body);padding:7px 13px;border-radius:var(--r-pill);border:1px dashed color-mix(in srgb,var(--muted) 45%,var(--bg));color:var(--muted);cursor:default;user-select:none}
 .me{display:flex;align-items:center;gap:var(--s4);margin-bottom:var(--s6)}
