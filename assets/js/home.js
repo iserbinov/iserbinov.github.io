@@ -4,8 +4,6 @@
   const name=document.getElementById('name');
   const bl=document.getElementById('bl');
   const btn=document.getElementById('specToggle');
-  // по умолчанию разметка только на первом экране, кнопка включает её на всей странице
-  let full=btn.getAttribute('aria-pressed')==='true';
   const svg=document.createElementNS(NS,'svg');
   svg.setAttribute('class','ov');
   svg.setAttribute('aria-hidden','true');
@@ -124,9 +122,7 @@
     label(sr.x+rad+8,sr.y+14,'radius/card · '+Math.round(rad),'start');
 
     // аннотации
-    const intro=sh.closest('.frame');
     wrap.querySelectorAll('[data-a]').forEach(el=>{
-      if(!full&&!intro.contains(el))return;
       const dt=el.closest('details');
       if(dt&&!dt.open&&!el.closest('summary'))return;
       const r=R(el);
@@ -168,7 +164,7 @@
     });
     // радиус и колонки индекса
     const sum=wrap.querySelector('.row summary');
-    if(full&&sum){
+    if(sum){
       const cols=getComputedStyle(sum).gridTemplateColumns.split(' ').map(parseFloat);
       const r=R(sum);
       label(r.x,r.y+r.h-2,`grid ${cols.slice(0,4).map(Math.round).join(' / ')} · gap 16`,'start');
@@ -197,9 +193,8 @@
   document.addEventListener('themechange',sch);
   sch();
   btn.addEventListener('click',()=>{
-    full=!full;
-    btn.setAttribute('aria-pressed',full);
-    wrap.classList.toggle('spec-all',full);
-    sch();
+    const on=btn.getAttribute('aria-pressed')!=='true';
+    btn.setAttribute('aria-pressed',on);
+    wrap.classList.toggle('nospec',!on);
   });
 })();
