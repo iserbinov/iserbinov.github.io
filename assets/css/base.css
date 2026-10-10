@@ -14,6 +14,7 @@
   --spec-text:#297890;
   --accent:#BA4B21;
   --accent-fill:#EE6A35;
+  --fill-soft:color-mix(in srgb,var(--muted) 55%,var(--bg));
   --edge:rgba(38,32,24,.04);
   --shadow:0 1px 2px rgba(38,32,24,.03),0 8px 24px rgba(38,32,24,.045);
   --f-display:"Geologica","Golos Text",system-ui,sans-serif;
@@ -102,7 +103,7 @@ section{padding-top:0}
 .row[open] .plus{transform:rotate(45deg);color:var(--accent)}
 .row summary:hover .what{color:var(--accent)}
 .row .static .co,.row .static .what{color:var(--muted)}
-.pubt{font:400 11px/1.9 var(--f-mono)!important;letter-spacing:.02em;color:var(--spec-text)!important}
+.row .static .pubt{font:400 11px/1.9 var(--f-mono);letter-spacing:.02em;color:var(--spec-text)}
 .cover{display:block;margin-top:10px;aspect-ratio:1.9/1;max-width:100%;background:var(--surface);border-radius:var(--r2);position:relative}
 .cover .mono{position:absolute;left:10px;bottom:8px;font-size:10.5px;color:var(--muted)}
 #talks .static .what{color:var(--fg)}
@@ -145,14 +146,15 @@ a.row:hover .plus{color:var(--accent);transform:translateX(3px)}
 .g-lab .gy{font:400 11px/1.9 var(--f-mono);color:var(--muted);text-align:right}
 .g-lab .gt{grid-column:1/-1;font-size:13px;color:var(--muted);line-height:1.35}
 .g-lab em{display:none}
-.g-row .bar{position:absolute;height:12px;border-radius:var(--r2);background:color-mix(in srgb,var(--muted) 55%,var(--bg))}
+.g-row .bar{position:absolute;height:12px;border-radius:var(--r2);background:var(--fill-soft)}
 .g-row.ds .bar{background:var(--fg);opacity:1}
 .g-row.now .bar{background:var(--accent-fill);opacity:1}
-.g-row.mix .bar{opacity:1;background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 55%,var(--bg)) 50%,var(--fg) 50%)}
+.g-row.mix .bar{opacity:1;background:linear-gradient(90deg,var(--fill-soft) 50%,var(--fg) 50%)}
 .gantt-head{grid-column:1;grid-row:1;height:28px}
-.g-lab em{display:none!important}
 .g-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:var(--s5);font:400 11px var(--f-mono);color:var(--muted)}
-.g-legend i{display:inline-block;width:18px;height:8px;border-radius:var(--r1);margin-right:6px;vertical-align:0}
+.g-legend i{display:inline-block;width:18px;height:8px;border-radius:var(--r1);margin-right:6px;vertical-align:0;background:var(--fg)}
+.g-legend .soft{background:var(--fill-soft)}
+.g-legend .now{background:var(--accent-fill)}
 
 /* about / expertise */
 .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s7);margin-top:var(--s6)}
@@ -198,7 +200,6 @@ footer{padding-top:0}
   .g-lab::before{content:"";position:absolute;left:-24px;top:5px;width:7px;height:7px;box-sizing:border-box;border-radius:50%;background:var(--bg);border:1px solid var(--fg);z-index:1}
   .g-row.now .g-lab::before{background:var(--accent-fill);border-color:var(--accent-fill)}
   .g-lab .gy{order:-1;grid-column:1/-1;text-align:left}
-  .g-lab em{display:block;grid-column:1/-1;font:400 11px var(--f-mono);font-style:normal;color:var(--fg)}
 }
 @media (max-width:480px){
   .brief{grid-template-columns:1fr}

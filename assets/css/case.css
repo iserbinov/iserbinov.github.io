@@ -22,13 +22,13 @@
 .steps li::before{content:counter(st,decimal-leading-zero);font:400 12px/1.9 var(--f-mono);color:var(--muted)}
 figure{margin:0}
 .ccover:has(img){aspect-ratio:auto}
-.ccover img,.cfig img{height:auto!important;object-fit:contain!important}
-.cfig img{display:block;width:100%;border-radius:var(--r2);background:var(--surface)}
+.ccover img,.cfig img{height:auto;object-fit:contain}
+.cfig img{display:block;width:100%;background:var(--surface)}
 .cfig figcaption{margin-top:var(--s2);color:var(--muted)}
 @media (max-width:820px){.cmeta{grid-template-columns:1fr 1fr}.chap{grid-template-columns:1fr;gap:var(--s2)}}
 
 /* картинки с тем же радиусом, что у листов */
-.ccover,.cfig img{border-radius:var(--r-card)!important;overflow:hidden}
+.ccover,.cfig img{border-radius:var(--r-card);overflow:hidden}
 .cfig{margin-top:var(--s5)}
 .cert{max-width:320px}
 .cert img{border:1px solid var(--line)}
@@ -47,7 +47,7 @@ figure{margin:0}
 .pl-lab b{font:500 15px/1.25 var(--f-display)}
 .pl-t{grid-column:2;font-size:13px;line-height:1.35;color:var(--muted)}
 .pl-bar{grid-row:1;height:12px;margin-inline:3px;border-radius:var(--r2);background:var(--fg)}
-.pl-row.par .pl-bar{background:color-mix(in srgb,var(--muted) 55%,var(--bg))}
+.pl-row.par .pl-bar{background:var(--fill-soft)}
 .pl-row.now .pl-bar{background:var(--accent-fill);margin-right:0;border-radius:var(--r2) 0 0 var(--r2)}
 @media (max-width:1000px){.chap.wide{grid-template-columns:1fr;gap:var(--s2)}}
 @media (max-width:640px){
@@ -76,7 +76,7 @@ figure{margin:0}
 /* рамка слайда считается от ширины самой картинки: внутренний радиус = внешний − отступ на любой ширине */
 @supports (width:1cqw){
   .cfig.slide,.cfig.frame{container-type:inline-size}
-  .cfig.slide img,.cfig.frame img{padding:var(--slide-pad);border-radius:var(--slide-r)!important}
+  .cfig.slide img,.cfig.frame img{padding:var(--slide-pad);border-radius:var(--slide-r)}
 }
 .cert img{box-sizing:border-box;padding:clamp(8px,1.6vw,16px);background:var(--paper)}
 @media (max-width:820px){.ckpis{grid-template-columns:1fr 1fr}}
@@ -84,26 +84,41 @@ figure{margin:0}
 @media (max-width:480px){.chap code{white-space:normal;overflow-wrap:anywhere}}
 
 /* таблица пар «параметр: значение» */
-.ttab{display:grid;margin-top:var(--s4);max-width:62ch}
-.ttab div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--s4);padding-block:10px;border-bottom:1px solid var(--line);font-size:15px}
+.ttab{--ttab-v:1.6fr;display:grid;margin-top:var(--s4);max-width:62ch}
+.ttab div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,var(--ttab-v));gap:var(--s4);padding-block:10px;border-bottom:1px solid var(--line);font-size:15px}
 .ttab div:first-child{border-top:1px solid var(--line)}
 .ttab .mono{font-size:12.5px;color:var(--muted)}
 .chap>div>p+ul{margin-top:var(--s3)}
 @media (max-width:820px){.ttab div{grid-template-columns:1fr;gap:2px}}
 
 /* стадии: нумерованная лента */
-.stages{margin:var(--s4) 0 var(--s4)!important;padding:0!important;list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2);max-width:none!important}
-.stages li{counter-increment:st;display:grid;gap:var(--s1);padding:var(--s3) var(--s4);border-radius:var(--r3);background:var(--surface);font-size:15px;line-height:1.3;margin:0!important}
-.stages li::before{content:counter(st,decimal-leading-zero);font:400 11px var(--f-mono);color:var(--spec-text)}
-@media (max-width:640px){.stages{grid-template-columns:1fr 1fr}}
-@media (max-width:420px){.stages{grid-template-columns:1fr}}
+.chap .stages{margin:var(--s4) 0;padding:0;list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2);max-width:none}
+.chap .stages li{counter-increment:st;display:grid;gap:var(--s1);padding:var(--s3) var(--s4);border-radius:var(--r3);background:var(--surface);font-size:15px;line-height:1.3;margin:0}
+.chap .stages li::before{content:counter(st,decimal-leading-zero);font:400 11px var(--f-mono);color:var(--spec-text)}
+@media (max-width:640px){.chap .stages{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.chap .stages{grid-template-columns:1fr}}
 
 /* ряд из трёх KPI, пара изображений и сноска: общие для кейсов */
 .ckpis.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .duo{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--s3);align-items:start;margin:0}
-.duo img{display:block;width:100%;height:auto;border-radius:var(--r2);background:var(--surface)}
+.duo img{display:block;width:100%;height:auto}
 .cfig.duo{margin-top:var(--s5)}
 .duo figcaption{grid-column:1/-1}
 .note{color:var(--muted)}
 @media (max-width:820px){.ckpis.three{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.duo{grid-template-columns:1fr}}
+
+/* гипотезы роста: карточки «если / получим» */
+.chap .hyp{margin:var(--s4) 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2);max-width:none}
+.chap .hyp li{display:grid;gap:var(--s2);align-content:start;padding:var(--s4);border-radius:var(--r4);background:var(--surface);margin:0}
+.hyp .mono{color:var(--spec-text);font-size:11px}
+.chap .hyp p{margin:0;font-size:15px;line-height:1.45}
+/* карта продукта */
+.pmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2);margin:var(--s4) 0}
+.pmap .core{grid-column:1/-1;padding:10px var(--s4);border-radius:var(--r4);background:var(--fg);color:var(--bg);text-align:center}
+.pmap .br{padding:var(--s4);border-radius:var(--r4);background:var(--surface)}
+.pmap .br b{display:block;font:400 19px/1.2 var(--f-display);margin-bottom:var(--s3)}
+.pmap ol{margin:0;padding:0;list-style:none;counter-reset:pm}
+.pmap li{counter-increment:pm;display:grid;grid-template-columns:var(--s5) 1fr;font-size:15px;line-height:1.4;padding-block:6px;border-top:1px solid var(--line)}
+.pmap li::before{content:counter(pm);font:400 11px/1.9 var(--f-mono);color:var(--muted)}
+@media (max-width:820px){.chap .hyp,.pmap{grid-template-columns:1fr}}
