@@ -1,0 +1,41 @@
+/* Element Group: страницы white paper и ряд из трёх KPI */
+.ckpis.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin:0}
+.pages img{display:block;width:100%;height:auto;border-radius:var(--r2);background:var(--surface)}
+.cfig.pages{margin-top:var(--s5)}
+.duo{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--s3);align-items:start;margin:0}
+.duo img{display:block;width:100%;height:auto;border-radius:var(--r2);background:var(--surface)}
+.cfig.duo{margin-top:var(--s5)}
+.pages figcaption,.duo figcaption{grid-column:1/-1}
+.note{color:var(--muted)}
+@media (max-width:820px){.ckpis.three{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.pages{grid-template-columns:1fr 1fr}.pages img:nth-of-type(3){display:none}.duo{grid-template-columns:1fr}}
+/* таблица пар «параметр: значение», как в ecom */
+.ttab{display:grid;margin-top:var(--s4);max-width:62ch}
+.ttab div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--s4);padding-block:10px;border-bottom:1px solid var(--line);font-size:15px}
+.ttab div:first-child{border-top:1px solid var(--line)}
+.ttab .mono{font-size:12.5px;color:var(--muted)}
+.chap>div>p+ul{margin-top:var(--s3)}
+@media (max-width:820px){.ttab div{grid-template-columns:1fr;gap:2px}}
+
+/* стадии пути клиента: нумерованная лента */
+.stages{margin:var(--s4) 0 var(--s4)!important;padding:0!important;list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2);max-width:none!important}
+.stages li{counter-increment:st;display:grid;gap:var(--s1);padding:var(--s3) var(--s4);border-radius:var(--r3);background:var(--surface);font-size:15px;line-height:1.3;margin:0!important}
+.stages li::before{content:counter(st,decimal-leading-zero);font:400 11px var(--f-mono);color:var(--spec-text)}
+@media (max-width:640px){.stages{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.stages{grid-template-columns:1fr}}
+
+/* гипотезы роста: карточки «если / получим» */
+.hyp{margin:var(--s4) 0!important;padding:0!important;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2);max-width:none!important}
+.hyp li{display:grid;gap:var(--s2);align-content:start;padding:var(--s4);border-radius:var(--r4);background:var(--surface);margin:0!important}
+.hyp .mono{color:var(--spec-text);font-size:11px}
+.hyp p{margin:0!important;font-size:15px!important;line-height:1.45!important}
+/* карта продукта */
+.pmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2);margin:var(--s4) 0}
+.pmap .core{grid-column:1/-1;padding:10px var(--s4);border-radius:var(--r4);background:var(--fg);color:var(--bg);text-align:center}
+.pmap .br{padding:var(--s4);border-radius:var(--r4);background:var(--surface)}
+.pmap .br b{display:block;font:400 19px/1.2 var(--f-display);margin-bottom:var(--s3)}
+.pmap ol{margin:0;padding:0;list-style:none;counter-reset:pm}
+.pmap li{counter-increment:pm;display:grid;grid-template-columns:var(--s5) 1fr;font-size:15px;line-height:1.4;padding-block:6px;border-top:1px solid var(--line)}
+.pmap li::before{content:counter(pm);font:400 11px/1.9 var(--f-mono);color:var(--muted)}
+@media (max-width:820px){.hyp,.pmap{grid-template-columns:1fr}}
