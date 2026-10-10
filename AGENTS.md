@@ -30,8 +30,6 @@ README.md                    описание структуры, держать
 ```
 
 
-Скрытые кейсы (element, tetrika, sberklass) закрыты `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">` и не лежат в sitemap.xml. Не добавляй им ссылки в sitemap и не меняй robots.txt.
-
 В `<head>` остаются только мета, шрифты, favicon, крошечный критичный блок (фон и тема до отрисовки) и ссылки на стили. В теле нет `<style>` и `<script>` с кодом, кроме критичного блока темы.
 
 Если появляется новая страница кейса: копируй структуру существующей, подключай `case.css` и `case.js` плюс свой `<кейс>.css`, обновляй главную и README.
