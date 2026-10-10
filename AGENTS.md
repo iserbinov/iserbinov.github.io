@@ -19,7 +19,7 @@
 
 ```
 index.html                   главная
-projects/<кейс>/index.html   страницы кейсов (сейчас ecom, nlmk)
+projects/<кейс>/index.html   страницы кейсов (ecom, nlmk, tetrika, element, sberklass)
 404.html
 assets/css/                  стили (home.css, case.css, <кейс>.css)
 assets/js/                   скрипты (home.js, case.js)
@@ -28,6 +28,9 @@ assets/                      картинки в WebP
 CNAME                        serbinov.com, не трогать
 README.md                    описание структуры, держать актуальным
 ```
+
+
+Скрытые кейсы (element, tetrika, sberklass) закрыты `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">` и не лежат в sitemap.xml. Не добавляй им ссылки в sitemap и не меняй robots.txt.
 
 В `<head>` остаются только мета, шрифты, favicon, крошечный критичный блок (фон и тема до отрисовки) и ссылки на стили. В теле нет `<style>` и `<script>` с кодом, кроме критичного блока темы.
 
