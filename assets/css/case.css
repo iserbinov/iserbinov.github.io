@@ -1,3 +1,4 @@
+:root{--slide-pad:3.9cqw;--slide-r:6.7cqw}
 
 .fname{display:flex;justify-content:space-between;gap:12px;color:var(--muted);padding:0 4px 8px}
 .art .what small{display:block;margin-top:6px;font:400 14px/1.5 var(--f-body);color:var(--muted)}
@@ -70,6 +71,11 @@ figure{margin:0}
 .chap>div>*+.links{margin-top:var(--s4)}
 .chap>div>h3+p{margin-top:0}
 .cfig.slide img{box-sizing:border-box;padding:clamp(10px,2.4vw,28px);background:var(--slide-bg)}
+/* рамка слайда считается от ширины самой картинки: внутренний радиус = внешний − отступ на любой ширине */
+@supports (width:1cqw){
+  .cfig.slide{container-type:inline-size}
+  .cfig.slide img{padding:var(--slide-pad);border-radius:var(--slide-r)!important}
+}
 .cert img{box-sizing:border-box;padding:clamp(8px,1.6vw,16px);background:var(--paper)}
 @media (max-width:820px){.ckpis{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.ckpis .kpi b{white-space:normal}}
