@@ -10,7 +10,7 @@
   let played=false;
 
   /* ——— линейка: случайное поле без заданного направления ——— */
-  let bars=[],wave=null,raf=0,hold=0,t0=0,crest=-1;
+  let hov=false,bars=[],wave=null,raf=0,hold=0,t0=0,crestT=-1,crestC=0,crestA=0;
   const rnd=(a,b)=>a+Math.random()*(b-a);
   function build(){
     if(!eq||reduce)return;
@@ -36,12 +36,17 @@
     if(!wave||!bars.length)return;
     if(!t0)t0=ts;
     const t=(ts-t0)/1000;
+    // гребень плавно догоняет курсор и так же плавно гаснет
+    if(crestT>=0){
+      crestC=crestA<.05?crestT:crestC+(crestT-crestC)*.3;
+      crestA+=(1-crestA)*.2;
+    }else crestA*=.88;
     for(let i=0;i<bars.length;i++){
       const v=wave.base
         +wave.a1*Math.sin(i*wave.k1+t*wave.w1+wave.p1)
         +wave.a2*Math.sin(i*wave.k2+t*wave.w2+wave.p2)
         +(Math.random()-.5)*wave.jit
-        +(crest>=0?.55*Math.exp(-Math.pow((i-crest)/4,2)):0);
+        +.55*crestA*Math.exp(-Math.pow((i-crestC)/4,2));
       bars[i].style.transform='scaleY('+Math.max(.14,Math.min(1,v)).toFixed(3)+')';
     }
     raf=requestAnimationFrame(frame);
@@ -54,40 +59,48 @@
     t0=0;
     eq.classList.add('go');
     if(!raf)raf=requestAnimationFrame(frame);
-    if(ms)hold=setTimeout(waveOff,ms);
+    if(ms)hold=setTimeout(()=>{if(!hov)waveOff()},ms);
   }
   function waveOff(){
     if(!eq)return;
-    cancelAnimationFrame(raf);raf=0;wave=null;
+    cancelAnimationFrame(raf);raf=0;wave=null;crestT=-1;crestA=0;
     eq.classList.remove('go');
     bars.forEach(b=>{b.style.transform=''});
   }
-  if(top&&fine&&!reduce){
-    top.addEventListener('pointerenter',()=>waveOn(0));
-    top.addEventListener('pointerleave',()=>waveOff());
-  }
-
-  /* ——— касание: тап запускает новую волну, палец ведёт гребень ——— */
-  if(top&&!fine&&!reduce){
+  /* ——— указатель: гребень идёт за курсором и за пальцем, тап запускает новую волну ——— */
+  if(top&&!reduce){
     let down=false,moved=false;
-    const at=e=>{
+    top.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hov=true});
+    top.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hov=false});
+    const aim=e=>{
       if(!bars.length)return;
       const r=eq.getBoundingClientRect();
-      crest=Math.max(0,Math.min(bars.length-1,(e.clientX-r.left)/r.width*(bars.length-1)));
+      crestT=Math.max(0,Math.min(bars.length-1,(e.clientX-r.left)/r.width*(bars.length-1)));
     };
-    top.addEventListener('pointerdown',e=>{down=true;moved=false;clearTimeout(hold)});
+    const release=ms=>{crestT=-1;clearTimeout(hold);hold=setTimeout(waveOff,ms)};
+    top.addEventListener('pointerenter',e=>{
+      if(e.pointerType!=='mouse')return;
+      waveOn(0);aim(e);
+    });
+    top.addEventListener('pointerleave',e=>{
+      if(e.pointerType==='mouse')release(700);
+    });
+    top.addEventListener('pointerdown',e=>{
+      if(e.pointerType==='mouse')return;
+      down=true;moved=false;clearTimeout(hold);
+    });
     top.addEventListener('pointermove',e=>{
+      if(e.pointerType==='mouse'){aim(e);return}
       if(!down)return;
       if(!moved){moved=true;if(!raf)waveOn(0)}
-      at(e);
+      aim(e);
     });
-    const end=()=>{
-      if(!down)return;
-      down=false;crest=-1;
-      if(!moved)waveOn(2500);else hold=setTimeout(waveOff,1500);
-    };
-    top.addEventListener('pointerup',end);
-    top.addEventListener('pointercancel',()=>{down=false;crest=-1;if(raf)hold=setTimeout(waveOff,1000)});
+    top.addEventListener('pointerup',e=>{
+      if(e.pointerType==='mouse'||!down)return;
+      down=false;
+      if(moved)release(1500);else waveOn(2500);
+    });
+    top.addEventListener('pointercancel',()=>{down=false;if(raf)release(1000)});
   }
 
   /* ——— появление: ряд за рядом ——— */
