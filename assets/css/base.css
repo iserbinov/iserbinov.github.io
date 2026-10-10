@@ -60,7 +60,7 @@ a:hover{text-decoration-color:var(--fg)}
 .tg{display:flex;gap:var(--s5)}
 .toggle{background:none;border:0;color:var(--muted);padding:4px 0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:6px}
 .toggle:hover{color:var(--fg)}
-.toggle::before{content:"";width:6px;height:6px;border-radius:50%;border:1px solid currentColor;box-sizing:border-box}
+.toggle::before{content:"";width:6px;height:6px;transform:translateY(.7px);border-radius:50%;border:1px solid currentColor;box-sizing:border-box}
 .toggle[aria-pressed="true"]::before{background:var(--spec);border-color:var(--spec)}
 #themeToggle::before{display:none}
 
