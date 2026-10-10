@@ -174,6 +174,8 @@ footer{padding-top:0}
 .cta .ways dd{margin:0;white-space:nowrap}
 .foot{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s6);padding-inline:4px;color:var(--muted)}
 .foot a{text-decoration:none}.foot a:hover{color:var(--fg)}
+.foot>span a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.foot>span a:hover{text-decoration-color:currentColor}
 .log{margin-top:var(--s4);border-top:1px solid var(--line);padding-top:var(--s4);display:grid;grid-template-columns:128px 1fr;gap:var(--s4);color:var(--muted)}
 .log>span{white-space:nowrap}
 .log ul{margin:0;padding-left:1.1em}
