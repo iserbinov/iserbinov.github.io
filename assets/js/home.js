@@ -99,6 +99,33 @@
     E('path',{class:'d',d:`M${n.x} ${n.y}H${n.r}V${n.b}H${n.x}Z`});
     [[n.x,n.y],[n.r,n.y],[n.x,n.b],[n.r,n.b]].forEach(([x,y])=>E('rect',{class:'h',x:x-2.5,y:y-2.5,width:5,height:5}));
     label(n.x,n.b+16,W<560?`type/display · ${Math.round(parseFloat(ns.fontSize))}/${Math.round(parseFloat(ns.lineHeight))}`:`type/display · Geologica ${ns.fontWeight} · ${Math.round(parseFloat(ns.fontSize))}/${Math.round(parseFloat(ns.lineHeight))} · −4.5%`);
+    // стек AI: промежутки между словами на токенах (работает и на мобилке)
+    const stk=document.querySelector('.ai-stack');
+    if(stk&&stk.getBoundingClientRect().width){
+      const li=[...stk.children].map(R);
+      const cs=getComputedStyle(stk);
+      const cg=Math.round(parseFloat(cs.columnGap)),rg=Math.round(parseFloat(cs.rowGap));
+      const tk=v=>({4:'s1',8:'s2',12:'s3',16:'s4',24:'s5',32:'s6',48:'s7',72:'s8',120:'s9'}[v]||'');
+      let first=true,rowDone=false;
+      const wrapped=li.some(q=>Math.abs(q.y-li[0].y)>=4);
+      for(let i=1;i<li.length;i++){
+        const a=li[i-1],c=li[i];
+        if(Math.abs(a.y-c.y)<4){
+          const y=a.y+a.h/2;
+          E('line',{x1:a.r,y1:y,x2:c.x,y2:y});
+          E('line',{x1:a.r,y1:y-4,x2:a.r,y2:y+4});
+          E('line',{x1:c.x,y1:y-4,x2:c.x,y2:y+4});
+          if(first){first=false;label(a.r,wrapped?a.y-12:a.b+14,`space/${tk(cg)} · ${cg}`,'start')}
+        }else if(!rowDone){
+          rowDone=true;
+          const x=a.x+4;
+          E('line',{x1:x,y1:a.b,x2:x,y2:c.y});
+          E('line',{x1:x-4,y1:a.b,x2:x+4,y2:a.b});
+          E('line',{x1:x-4,y1:c.y,x2:x+4,y2:c.y});
+          label(x+8,c.y+c.h/2,`space/${tk(rg)} · ${rg}`,'start');
+        }
+      }
+    }
     if(small)return;
 
     // поле страницы
@@ -130,6 +157,10 @@
       const tok=el.dataset.tok;
       const s=getComputedStyle(el);
       if(!r.w)return;
+      if(a==='stack'){
+        E('path',{class:'d',d:`M${r.x} ${r.y}H${r.r}V${r.b}H${r.x}Z`});
+        label(r.x,r.y-10,`${tok} · ${Math.round(parseFloat(s.fontSize))}/${Math.round(parseFloat(s.lineHeight))} · ${s.fontWeight}`,'start',s.color);
+      }
       if(a==='type'){
         E('path',{class:'d',d:`M${r.x} ${r.y}H${r.r}V${r.b}H${r.x}Z`});
         label(r.x,r.y-10,`${tok} · ${Math.round(parseFloat(s.fontSize))}/${Math.round(parseFloat(s.lineHeight))} · ${s.fontWeight}`,'start',s.color);

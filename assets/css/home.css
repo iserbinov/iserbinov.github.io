@@ -21,8 +21,9 @@
 /* AI-энтузиаст */
 /* линейка-сигнал: она же подчёркивание шапки секции */
 #tools .head{border-bottom:0;padding-bottom:var(--s2)}
-.eq{display:flex;align-items:flex-end;gap:6px;height:14px}
-.eq i{flex:0 0 2px;height:14px;border-radius:1px;background:color-mix(in srgb,var(--fg) 32%,var(--bg));transform:scaleY(.3);transform-origin:bottom;transition:transform .5s ease,background-color .6s ease}
+.eq{position:relative;height:14px}
+.ai-top{min-height:44px;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
+.eq i{position:absolute;bottom:0;width:2px;height:14px;border-radius:1px;background:color-mix(in srgb,var(--fg) 32%,var(--bg));transform:scaleY(.3);transform-origin:bottom;transition:transform .5s ease,background-color .6s ease}
 .eq.go i{background:var(--spec-text);transition:transform .1s linear,background-color .6s ease}
 
 /* карточки: две колонки */

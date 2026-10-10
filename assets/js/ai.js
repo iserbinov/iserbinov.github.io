@@ -10,17 +10,16 @@
   let played=false;
 
   /* ——— линейка: случайное поле без заданного направления ——— */
-  let bars=[],wave=null,raf=0,hold=0,t0=0;
+  let bars=[],wave=null,raf=0,hold=0,t0=0,crest=-1;
   const rnd=(a,b)=>a+Math.random()*(b-a);
   function build(){
     if(!eq||reduce)return;
     const pitch=innerWidth<=480?6:8;
-    const n=Math.max(8,Math.floor(eq.clientWidth/pitch));
+    const n=Math.max(8,Math.round((eq.clientWidth-2)/pitch)+1);
     if(bars.length===n)return;
-    eq.style.gap=(pitch-2)+'px';
     eq.textContent='';
     const f=document.createDocumentFragment();
-    for(let i=0;i<n;i++)f.appendChild(document.createElement('i'));
+    for(let i=0;i<n;i++){const b=document.createElement('i');b.style.left='calc((100% - 2px) * '+(i/(n-1))+')';f.appendChild(b)}
     eq.appendChild(f);
     bars=[...eq.children];
   }
@@ -41,7 +40,8 @@
       const v=wave.base
         +wave.a1*Math.sin(i*wave.k1+t*wave.w1+wave.p1)
         +wave.a2*Math.sin(i*wave.k2+t*wave.w2+wave.p2)
-        +(Math.random()-.5)*wave.jit;
+        +(Math.random()-.5)*wave.jit
+        +(crest>=0?.55*Math.exp(-Math.pow((i-crest)/4,2)):0);
       bars[i].style.transform='scaleY('+Math.max(.14,Math.min(1,v)).toFixed(3)+')';
     }
     raf=requestAnimationFrame(frame);
@@ -65,6 +65,29 @@
   if(top&&fine&&!reduce){
     top.addEventListener('pointerenter',()=>waveOn(0));
     top.addEventListener('pointerleave',()=>waveOff());
+  }
+
+  /* ——— касание: тап запускает новую волну, палец ведёт гребень ——— */
+  if(top&&!fine&&!reduce){
+    let down=false,moved=false;
+    const at=e=>{
+      if(!bars.length)return;
+      const r=eq.getBoundingClientRect();
+      crest=Math.max(0,Math.min(bars.length-1,(e.clientX-r.left)/r.width*(bars.length-1)));
+    };
+    top.addEventListener('pointerdown',e=>{down=true;moved=false;clearTimeout(hold)});
+    top.addEventListener('pointermove',e=>{
+      if(!down)return;
+      if(!moved){moved=true;if(!raf)waveOn(0)}
+      at(e);
+    });
+    const end=()=>{
+      if(!down)return;
+      down=false;crest=-1;
+      if(!moved)waveOn(2500);else hold=setTimeout(waveOff,1500);
+    };
+    top.addEventListener('pointerup',end);
+    top.addEventListener('pointercancel',()=>{down=false;crest=-1;if(raf)hold=setTimeout(waveOff,1000)});
   }
 
   /* ——— появление: ряд за рядом ——— */
