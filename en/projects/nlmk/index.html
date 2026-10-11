@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NLMK design system — Ivan Serbinov</title>
+<meta name="description" content="NLMK design system 2.0 from scratch: plant research, tokens, 46 components, an open-source part, about $1M a year in estimated savings.">
+<meta property="og:title" content="NLMK design system — Ivan Serbinov">
+<meta property="og:description" content="NLMK design system 2.0 from scratch.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://serbinov.com/en/projects/nlmk/">
+<meta property="og:image" content="https://serbinov.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6F6F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F0F0E" media="(prefers-color-scheme: dark)">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="Short summary for AI assistants">
+<link rel="canonical" href="https://serbinov.com/en/projects/nlmk/">
+<link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/nlmk/">
+<link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/nlmk/">
+<link rel="alternate" hreflang="x-default" href="https://serbinov.com/projects/nlmk/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/geologica-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/golos-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<!-- Critical minimum: background and theme before styles load -->
+<script>
+(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<style>body{margin:0;background:#F6F6F4}@media (prefers-color-scheme:dark){html:not([data-theme="light"]) body{background:#0F0F0E}}html[data-theme="dark"] body{background:#0F0F0E}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<link rel="stylesheet" href="/assets/css/base.css?v=20261119">
+<link rel="stylesheet" href="/assets/css/case.css?v=20261117">
+
+<div class="wrap" id="wrap">
+  <header class="bar mono">
+    <a class="brand" href="/en/">serbinov.com</a>
+    <nav aria-label="Main">
+      <a href="/en/#work">Work</a>
+      <a href="/en/#tools">AI</a>
+      <a href="/en/#talks">Talks</a>
+      <a href="/en/#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="tg"><span class="langs" role="group" aria-label="Language"><a href="/projects/nlmk/" hreflang="ru" lang="ru" data-setlang="ru">RU</a><span aria-hidden="true">·</span><span class="lang-cur" aria-current="true">EN</span></span><button class="toggle mono" id="themeToggle">theme: auto</button></span>
+  </header>
+<main id="main" tabindex="-1">
+
+  <div class="frame"><div class="fname mono"><span>frame/case</span><span>NLMK</span></div><section class="sheet case">
+    <a class="back" href="/en/#work">← Work</a>
+    <h1>A&nbsp;design system from scratch</h1>
+    <div class="cmeta">
+      <div><span class="mono">Company</span>NLMK</div>
+      <div><span class="mono">Years</span>2022–2024</div>
+      <div><span class="mono">Role</span>Designer and creator of&nbsp;the design system</div>
+      <div><span class="mono">Website</span><a href="https://ds.nlmk.com">ds.nlmk.com</a></div>
+    </div>
+    <figure class="ccover"><img src="/assets/nlmk-cover.webp" alt="NLMK" width="1600" height="533" fetchpriority="high" decoding="async"></figure>
+    <div class="ckpis three">
+      <div class="kpi"><b>$1M</b><span>a&nbsp;year saved after adoption, internal estimate</span></div>
+      <div class="kpi"><b>8.1</b><span>design system satisfaction index</span></div>
+      <div class="kpi"><b>46 / 40</b><span>core components in&nbsp;design and in&nbsp;code</span></div>
+
+    </div>
+    <div class="chap"><h2>Context and goal</h2><p>NLMK’s design system 1.0 was Material UI with a&nbsp;new coat of&nbsp;paint. The goal was to&nbsp;move to&nbsp;an&nbsp;in-house design system 2.0 built for complex manufacturing interfaces and MES</p></div>
+    <div class="chap"><h2>Team and role</h2><div><p>Two engineers, the head of&nbsp;the design department and me. I&nbsp;owned the design, the design system architecture, design leadership and resources</p><p>Naming, versioning and documentation were worked out together with the engineers</p></div></div>
+    <div class="chap wide"><h2>Approach</h2><div>
+      <p>I&nbsp;started with research: trips to&nbsp;the plants to&nbsp;meet the people who use these interfaces every day, requests from designers, and a&nbsp;review of&nbsp;the Sber, Yandex and Ozon design systems. The outcome was an&nbsp;11-stage plan</p>
+      <div class="plan" role="list" aria-label="Design system build stages">
+        <div class="pl-head" aria-hidden="true"><span></span><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">01</span><b>Research</b><span class="pl-t">Plant visits, designer requests</span></span><i class="pl-bar" style="grid-column:2/3"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">02</span><b>Tokens</b><span class="pl-t">In&nbsp;design; component variants in&nbsp;the frontend</span></span><i class="pl-bar" style="grid-column:3/4"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">03</span><b>Component kit</b><span class="pl-t">Frontend built in&nbsp;parallel</span></span><i class="pl-bar" style="grid-column:4/5"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">04</span><b>Testing</b></span><i class="pl-bar" style="grid-column:5/6"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">05</span><b>Feedback</b><span class="pl-t">Interviews and metrics</span></span><i class="pl-bar" style="grid-column:6/7"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">06</span><b>Bug fixing</b></span><i class="pl-bar" style="grid-column:7/8"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">07</span><b>Migration to&nbsp;new components</b><span class="pl-t">Gradual</span></span><i class="pl-bar" style="grid-column:8/12"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">08</span><b>Second round of&nbsp;feedback</b></span><i class="pl-bar" style="grid-column:9/10"></i></div>
+        <div role="listitem" class="pl-row par"><span class="pl-lab"><span class="pl-n">09</span><b>Guides</b><span class="pl-t">Alongside the migration</span></span><i class="pl-bar" style="grid-column:8/12"></i></div>
+        <div role="listitem" class="pl-row "><span class="pl-lab"><span class="pl-n">10</span><b>Migration complete</b></span><i class="pl-bar" style="grid-column:11/12"></i></div>
+        <div role="listitem" class="pl-row now"><span class="pl-lab"><span class="pl-n">11</span><b>Support</b></span><i class="pl-bar" style="grid-column:12/13"></i></div>
+      </div>
+      <div class="g-legend" aria-hidden="true"><span><i></i>stage</span><span><i class="soft"></i>parallel track</span><span><i class="now"></i>ongoing</span></div>
+    </div></div>
+    <div class="chap"><h2>System</h2><div>
+      <p>We ended up with two design systems running side by&nbsp;side. The internal one covers foundations, product components, patterns, icons and guides, and evolves with NLMK’s internal systems. The open one is&nbsp;open source; more on&nbsp;it below</p>
+      <h3>Tokens</h3>
+      <p>The key decision: tokens live on&nbsp;the design side, component variants on&nbsp;the frontend side. Tokens were built in&nbsp;Tokens Studio, because Figma had no native tokens back then. There are four tiers: base color → palette from 50 to&nbsp;900 → semantic token → component token. For example, <code>base.primary-blue</code> → <code>primary-blue/700</code> → <code>primary-blue.default</code> → <code>ac.button.main-bg-def</code>. Sizes work the same way: <code>size.base</code> 16 → <code>size.m</code> 36 → <code>input.m.height</code>. Tokens are stored as&nbsp;JSON in&nbsp;the repository, each with a&nbsp;description</p>
+      <figure class="cfig slide"><img src="/assets/nlmk/tokens.webp" alt="Token diagram: color and size from base value to component token" width="1920" height="1474" loading="lazy" decoding="async"><figcaption class="mono">Color and size token chains</figcaption></figure>
+      <h3>Components</h3>
+      <p>46 core components in&nbsp;design and 40 in&nbsp;code. Complex components are assembled from states and variants: TreeList alone has more than 200</p>
+      <figure class="cfig slide"><img src="/assets/nlmk/treelist.webp" alt="TreeList component variants" width="1920" height="1058" loading="lazy" decoding="async"><figcaption class="mono">TreeList: nesting levels, selection, errors, warnings</figcaption></figure>
+      <h3>Versioning and updates</h3>
+      <p>One version number for design and code, plus a&nbsp;separate suffix for each side: <code>v02.11.98.des34</code> and <code>v02.11.98.fe67</code>. Teams hear about updates through a&nbsp;newsletter: new components, fixes, links to&nbsp;code and docs</p>
+      <figure class="cfig slide"><img src="/assets/nlmk/digest.webp" alt="Example newsletter about a design system 2.0 update" width="1920" height="1058" loading="lazy" decoding="async"><figcaption class="mono">The autumn release newsletter</figcaption></figure>
+    </div></div>
+    <div class="chap"><h2>Open-source part</h2><div>
+      <p>The open design system is&nbsp;for designers and engineers outside NLMK: the <a href="https://ds.nlmk.com">ds.nlmk.com</a> landing page, a&nbsp;Figma UI&nbsp;kit, Storybook, the <code>@nlmk/ds-2.0</code> package on&nbsp;npm, a&nbsp;GitHub repository, MIT license. It includes the logo, a&nbsp;palette generated from a&nbsp;brand HEX code, PT Root UI typography, icons, a&nbsp;modular grid, light and dark themes</p>
+      <p class="links mono"><a href="https://www.figma.com/@nlmk">Figma UI&nbsp;kit ↗</a><a href="https://nlmk-group.github.io/ds-2.0/?path=/docs/introduction-welcome--docs">Storybook ↗</a><a href="https://www.npmjs.com/package/@nlmk/ds-2.0">npm ↗</a><a href="https://github.com/nlmk-group/ds-2.0">GitHub ↗</a></p>
+      <figure class="cfig slide"><img src="/assets/nlmk/open-source.webp" alt="The open design system: Figma Community file and Storybook" width="1920" height="642" loading="lazy" decoding="async"><figcaption class="mono">Figma for designers, Storybook for engineers</figcaption></figure>
+    </div></div>
+    <div class="chap"><h2>Result</h2><div><ul>
+      <li>Savings from adoption: about $1M a&nbsp;year, internal estimate</li>
+      <li>Design system satisfaction index: 8.1</li>
+      <li>Two design systems: internal and open</li>
+      <li>A&nbsp;component showcase in&nbsp;Figma</li>
+      <li>The package outlived my time there: 280+ versions on&nbsp;npm, the latest in&nbsp;2026</li>
+      <li>State software registration certificate No.&nbsp;2023685643, “NLMK Design System”, dated November 29, 2023. Rights holder: NLMK PJSC; authors: two engineers, the head of&nbsp;the design department and me</li>
+    </ul>
+      <figure class="cfig cert"><a href="/assets/nlmk/ds-nlmk.pdf"><img src="/assets/nlmk/ds-nlmk.webp" alt="Software registration certificate for the NLMK Design System (in Russian)" width="1128" height="1677" loading="lazy" decoding="async"></a><figcaption class="mono"><a href="/assets/nlmk/ds-nlmk.pdf">Certificate, PDF</a> · <a href="https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&amp;DocNumber=2023685643" hreflang="ru">Rospatent registry</a></figcaption></figure></div></div>
+  </section></div>
+
+  </main>
+  <footer id="contact">
+    <div class="frame"><div class="fname mono"><span>frame/contact</span><span class="size"></span></div><div class="sheet"><div class="cta">
+      <p class="big" data-a="type" data-tok="type/display-m">Looking for a&nbsp;designer for a&nbsp;design system or&nbsp;a&nbsp;product? Get in&nbsp;touch</p>
+      <dl class="ways mono">
+        <div><dt>Telegram</dt><dd><a href="https://t.me/ivanserbinov">@ivanserbinov</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:iprestoff@gmail.com">iprestoff@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ivan-serbinov">ivan-serbinov</a></dd></div>
+        <div><dt>CV</dt><dd><a href="/assets/Ivan-Serbinov-CV-en.pdf">PDF, 1&nbsp;page</a></dd></div>
+      </dl>
+    </div>
+    </div></div>
+    <div class="foot mono">
+      <span>© 2026 <a href="/en/">Ivan Serbinov</a></span>
+      <a href="/changelog/" hreflang="ru">v1.11.23 · changelog (in&nbsp;Russian)</a>
+    </div>
+  </footer>
+</div>
+<script src="/assets/js/theme.js?v=20261118"></script>
+<script src="/assets/js/case.js?v=20261119" defer></script>
+</body>
+</html>

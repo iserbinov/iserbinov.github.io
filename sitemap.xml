@@ -2,10 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://serbinov.com/</loc><lastmod>2026-10-11</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/"/></url>
   <url><loc>https://serbinov.com/en/</loc><lastmod>2026-10-11</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/"/></url>
-  <url><loc>https://serbinov.com/projects/ecom/</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://serbinov.com/projects/nlmk/</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://serbinov.com/projects/sberklass/</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://serbinov.com/projects/tetrika/</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://serbinov.com/projects/element/</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://serbinov.com/projects/ecom/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/ecom/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/ecom/"/></url>
+  <url><loc>https://serbinov.com/en/projects/ecom/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/ecom/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/ecom/"/></url>
+  <url><loc>https://serbinov.com/projects/nlmk/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/nlmk/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/nlmk/"/></url>
+  <url><loc>https://serbinov.com/en/projects/nlmk/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/nlmk/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/nlmk/"/></url>
+  <url><loc>https://serbinov.com/projects/sberklass/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/sberklass/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/sberklass/"/></url>
+  <url><loc>https://serbinov.com/en/projects/sberklass/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/sberklass/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/sberklass/"/></url>
+  <url><loc>https://serbinov.com/projects/tetrika/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/tetrika/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/tetrika/"/></url>
+  <url><loc>https://serbinov.com/en/projects/tetrika/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/tetrika/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/tetrika/"/></url>
+  <url><loc>https://serbinov.com/projects/element/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/element/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/element/"/></url>
+  <url><loc>https://serbinov.com/en/projects/element/</loc><lastmod>2026-10-12</lastmod><xhtml:link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/element/"/><xhtml:link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/element/"/></url>
   <url><loc>https://serbinov.com/changelog/</loc><lastmod>2026-10-11</lastmod></url>
 </urlset>

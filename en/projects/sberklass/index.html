@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SberClass: a school platform’s learning flow — Ivan Serbinov</title>
+<meta name="description" content="The learning-process flow of a school platform in two versions, Lite and Pro: a dense interface that works for students from grade 1.">
+<meta property="og:title" content="SberClass: a school platform’s learning flow — Ivan Serbinov">
+<meta property="og:description" content="The learning flow of the SberClass school platform, 2021–22.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://serbinov.com/en/projects/sberklass/">
+<meta property="og:image" content="https://serbinov.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6F6F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F0F0E" media="(prefers-color-scheme: dark)">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="Short summary for AI assistants">
+<link rel="canonical" href="https://serbinov.com/en/projects/sberklass/">
+<link rel="alternate" hreflang="ru" href="https://serbinov.com/projects/sberklass/">
+<link rel="alternate" hreflang="en" href="https://serbinov.com/en/projects/sberklass/">
+<link rel="alternate" hreflang="x-default" href="https://serbinov.com/projects/sberklass/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/geologica-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/golos-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<!-- Critical minimum: background and theme before styles load -->
+<script>
+(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<style>body{margin:0;background:#F6F6F4}@media (prefers-color-scheme:dark){html:not([data-theme="light"]) body{background:#0F0F0E}}html[data-theme="dark"] body{background:#0F0F0E}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<link rel="stylesheet" href="/assets/css/base.css?v=20261119">
+<link rel="stylesheet" href="/assets/css/case.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/sberklass.css?v=20261114">
+<div class="wrap" id="wrap">
+  <header class="bar mono">
+    <a class="brand" href="/en/">serbinov.com</a>
+    <nav aria-label="Main">
+      <a href="/en/#work">Work</a>
+      <a href="/en/#tools">AI</a>
+      <a href="/en/#talks">Talks</a>
+      <a href="/en/#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="tg"><span class="langs" role="group" aria-label="Language"><a href="/projects/sberklass/" hreflang="ru" lang="ru" data-setlang="ru">RU</a><span aria-hidden="true">·</span><span class="lang-cur" aria-current="true">EN</span></span><button class="toggle mono" id="themeToggle">theme: auto</button></span>
+  </header>
+<main id="main" tabindex="-1">
+
+  <div class="frame"><div class="fname mono"><span>frame/case</span><span>SberClass</span></div><section class="sheet case">
+    <a class="back" href="/en/#work">← Work</a>
+    <h1>A&nbsp;school platform’s learning flow: complex, dense with information, and clear even to&nbsp;a&nbsp;first-grader</h1>
+    <div class="cmeta">
+      <div><span class="mono">Company</span>SberEducation, SberClass</div>
+      <div><span class="mono">Years</span>2021–22</div>
+      <div><span class="mono">Role</span>Senior Product Designer</div>
+      <div><span class="mono">Product</span>School platform, version 4.0, learning process</div>
+    </div>
+    <figure class="ccover"><img src="/assets/sber-cover.webp" alt="SberClass, a platform for schools" width="1600" height="533" fetchpriority="high" decoding="async"></figure>
+    <div class="ckpis three">
+      <div class="kpi"><b>2</b><span>versions of&nbsp;the learning process: Lite and Pro</span></div>
+      <div class="kpi"><b>3</b><span>roles in&nbsp;the product: student, teacher, school admin</span></div>
+      <div class="kpi"><b>from grade&nbsp;1</b><span>the youngest users: the interface works for first-graders</span></div>
+    </div>
+
+    <div class="chap"><h2>Context</h2><div><p>SberClass is&nbsp;SberEducation’s learning platform. According to&nbsp;public data, by&nbsp;the end of&nbsp;2020 it was running in&nbsp;pilot schools across 65 regions of&nbsp;Russia</p><p>In&nbsp;July 2021 I&nbsp;joined the version 4 design team as&nbsp;a&nbsp;Senior Product Designer. My area was the learning-process flow, from the timetable and gradebook to&nbsp;a&nbsp;student going through a&nbsp;lesson</p></div></div>
+
+    <div class="chap"><h2>Problem</h2><div><p>The learning process is&nbsp;lessons, assignments, grades, comments and materials: a&nbsp;lot of&nbsp;information. Teachers and first-graders both had to&nbsp;use it. We needed to&nbsp;show everything that matters without overwhelming the student</p>
+      <ul><li>Three roles with different jobs: student, teacher, school admin</li><li>School processes that can’t break: the electronic gradebook, timetable, terms</li><li>A&nbsp;mix of&nbsp;devices and screen sizes in&nbsp;schools</li></ul></div></div>
+
+    <div class="chap"><h2>Approach</h2><div><p>The core of&nbsp;the work was the learning-process flow: what a&nbsp;student needs during a&nbsp;lesson, and in&nbsp;what order. We designed for both versions, Lite and Pro, at&nbsp;once. Hypotheses were checked through research in&nbsp;schools, and nearly all of&nbsp;them held up. One didn’t: the motivation to&nbsp;learn turned out not to&nbsp;depend on&nbsp;whether a&nbsp;student lives in&nbsp;a&nbsp;village, a&nbsp;town or&nbsp;a&nbsp;big city</p>
+      <ol class="stages"><li>CJM and user flows</li><li>Prototypes</li><li>Research in&nbsp;schools</li><li>Figma reviews</li><li>Handoff to&nbsp;engineering</li><li>Iterating on&nbsp;versions</li></ol>
+      <p>My area was the flow of&nbsp;the entire learning process. Mockups went through Figma reviews where we debated terminology, list density, empty states and the main scenarios</p></div></div>
+
+    <div class="chap wide"><h2>System</h2><div>
+      <p>The product was built from three role-based files and a&nbsp;shared UI&nbsp;kit. Student screens revolve around the day: lesson, grades, assignments and comments sit on&nbsp;one card, and the current lesson is&nbsp;highlighted</p>
+      <div class="ttab">
+        <div><span class="mono">Student</span><span>Diary, subjects, assignments, materials, profile, soft and digital skills</span></div>
+        <div><span class="mono">Teacher</span><span>Home, module and lesson planning, assignment and content builders, class monitoring</span></div>
+        <div><span class="mono">Admin</span><span>Gradebook import, timetable, users, classes, departments, school settings</span></div>
+        <div><span class="mono">Foundation</span><span>Breakpoints at&nbsp;1280, 1024, 784 and 512, auto layout components, color styles, empty states</span></div>
+      </div>
+      <figure class="cfig">
+        <img src="/assets/sberklass-student-day.webp" width="1600" height="853" loading="lazy" decoding="async" alt="Student diary for a day: lesson cards with grades, assignments and comments, assignments by status on the right (in Russian)">
+        <figcaption class="mono">Student diary, one day: lessons with grades, assignments and comments; assignments by&nbsp;status on&nbsp;the right</figcaption>
+      </figure>
+      <figure class="cfig duo">
+        <img src="/assets/sberklass-student-today.webp" width="1600" height="853" loading="lazy" decoding="async" alt="Today’s student diary: the current lesson is highlighted, lessons are tagged as a test or a video lesson (in Russian)">
+        <img src="/assets/sberklass-student-filter.webp" width="1600" height="853" loading="lazy" decoding="async" alt="The same screen with the “Done” assignment filter: two assignments remain on the right (in Russian)">
+        <figcaption class="mono">Same screen: the current lesson stands out, assignments filter by&nbsp;status</figcaption>
+      </figure>
+      <figure class="cfig duo">
+        <img src="/assets/sberklass-lesson.webp" width="1600" height="1338" loading="lazy" decoding="async" alt="A student’s lesson: theory lesson card, grades for the day, teacher, comments, current topic and materials (in Russian)">
+        <img src="/assets/sberklass-lesson-skip.webp" width="1600" height="1248" loading="lazy" decoding="async" alt="A lesson in the “Absent” state: red lesson card, teacher, current topic and materials (in Russian)">
+        <figcaption class="mono">Lesson: lesson type, grades for the day, teacher, current topic and materials; on&nbsp;the right, a&nbsp;missed lesson</figcaption>
+      </figure>
+    </div></div>
+
+    <div class="chap"><h2>Working with engineering</h2><div><p>The frontend was built by&nbsp;an&nbsp;in-house team, with contractors brought in&nbsp;for specific pieces. The mockups I&nbsp;owned were built from components and states that could go into code without guesswork: sizes, responsive behavior, empty screens, errors</p></div></div>
+
+    <div class="chap"><h2>What happened to&nbsp;the project</h2><div><p>There are no metrics. The project was scaled down and repurposed, and almost nothing reached schools. The timeline below is&nbsp;based on&nbsp;public sources</p>
+      <div class="ttab">
+        <div><span class="mono">July 2021</span><span>Work on&nbsp;version 4 begins</span></div>
+        <div><span class="mono">Fall 2021</span><span>New leadership at&nbsp;the division and the company</span></div>
+        <div><span class="mono">2022</span><span>The project shrinks and changes course. In&nbsp;June I&nbsp;leave: my&nbsp;work no&nbsp;longer matched where the project was heading</span></div>
+        <div><span class="mono">Today</span><span>sberclass.ru: an&nbsp;after-school learning platform for grades 3–11</span></div>
+      </div>
+    </div></div>
+
+    <div class="chap"><h2>Result</h2><div>
+      <ul><li>The learning-process flow designed in&nbsp;two versions, Lite and Pro, for three roles: screens and prototypes of&nbsp;version 4</li><li>A&nbsp;dense learning process turned into screens that work for students from grade&nbsp;1</li><li>Research in&nbsp;schools confirmed nearly all hypotheses</li></ul>
+      <p class="note mono">The mockups belong to&nbsp;SberEducation</p>
+    </div></div>
+    <div class="more"><a class="go" href="https://t.me/ivanserbinov">Message me on&nbsp;Telegram ↗</a></div>
+  </section></div>
+
+  </main>
+  <footer id="contact">
+    <div class="frame"><div class="fname mono"><span>frame/contact</span><span class="size"></span></div><div class="sheet"><div class="cta">
+      <p class="big" data-a="type" data-tok="type/display-m">Looking for a&nbsp;designer for a&nbsp;design system or&nbsp;a&nbsp;product? Get in&nbsp;touch</p>
+      <dl class="ways mono">
+        <div><dt>Telegram</dt><dd><a href="https://t.me/ivanserbinov">@ivanserbinov</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:iprestoff@gmail.com">iprestoff@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ivan-serbinov">ivan-serbinov</a></dd></div>
+        <div><dt>CV</dt><dd><a href="/assets/Ivan-Serbinov-CV-en.pdf">PDF, 1&nbsp;page</a></dd></div>
+      </dl>
+    </div>
+    </div></div>
+    <div class="foot mono">
+      <span>© 2026 <a href="/en/">Ivan Serbinov</a></span>
+      <a href="/changelog/" hreflang="ru">v1.11.23 · changelog (in&nbsp;Russian)</a>
+    </div>
+  </footer>
+</div>
+<script src="/assets/js/theme.js?v=20261118"></script>
+<script src="/assets/js/case.js?v=20261119" defer></script>
+</body>
+</html>
