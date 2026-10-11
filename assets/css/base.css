@@ -56,6 +56,8 @@ a:hover{text-decoration-color:var(--fg)}
 .bar nav{display:flex;gap:var(--s5);margin-right:auto}
 .bar .brand{color:var(--fg);margin-right:var(--s6)}
 .bar nav a{color:var(--fg)}
+/* цели нажатия не меньше 24 px (WCAG 2.5.8) */
+.bar nav a,.bar .brand,.foot a,.cta .ways a{display:inline-flex;align-items:center;min-block-size:24px}
 .bar nav a:hover{color:var(--spec-text)}
 .bar a{text-decoration:none}
 .bar a:hover{color:var(--fg)}
