@@ -2,13 +2,14 @@
   const t=document.getElementById('themeToggle');
   const root=document.documentElement;
   const order=['auto','light','dark'];
-  const names={auto:'авто',light:'светлая',dark:'тёмная'};
+  const en=root.lang==='en';
+  const names=en?{auto:'auto',light:'light',dark:'dark'}:{auto:'авто',light:'светлая',dark:'тёмная'};
   let cur='auto';
   try{cur=localStorage.getItem('theme')||'auto'}catch(e){}
   const apply=()=>{
     if(cur==='auto')root.removeAttribute('data-theme');
     else root.setAttribute('data-theme',cur);
-    if(t)t.textContent='тема: '+names[cur];
+    if(t)t.textContent=(en?'theme: ':'тема: ')+names[cur];
     document.dispatchEvent(new CustomEvent('themechange'));
   };
   if(t)t.addEventListener('click',()=>{
@@ -17,4 +18,8 @@
     apply();
   });
   apply();
+  // ручной выбор языка запоминается и важнее автоопределения
+  document.querySelectorAll('[data-setlang]').forEach(a=>a.addEventListener('click',()=>{
+    try{localStorage.setItem('lang',a.dataset.setlang)}catch(e){}
+  }));
 })();
