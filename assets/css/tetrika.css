@@ -11,5 +11,5 @@
 .ab .vr.new>.mono{color:var(--accent)}
 .ab .fld{padding:var(--s3);border-radius:var(--r2);background:var(--bg);border:1px solid var(--line);font-size:15px;color:var(--muted)}
 .ab .btn{padding:var(--s3);border-radius:var(--r2);background:var(--fg);color:var(--bg);font-size:15px;text-align:center}
-.ab .vr.new .btn{background:var(--accent-fill);color:var(--bg)}
+.ab .vr.new .btn{background:var(--accent-fill);color:var(--on-accent)}
 @media (max-width:480px){.ab{grid-template-columns:1fr}.team .dots{gap:var(--s2)}.team .dots i{width:var(--s4);height:var(--s4)}}
