@@ -13,7 +13,7 @@
 .nf-legend b{font-weight:500;color:var(--fg);margin-right:var(--s1)}
 .nf h1{font:300 clamp(28px,5vw,56px)/1.1 var(--f-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 .nf-lead{margin:0;color:var(--muted);max-width:52ch;text-wrap:pretty}
-.nf-back{justify-self:start;font:500 16px var(--f-body);color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);padding-block:var(--s3)}
+.nf-back{justify-self:start;font:500 16px var(--f-body);color:var(--fg);text-decoration:underline;text-decoration-color:var(--muted);padding-block:var(--s3)}
 .nf-back:hover{text-decoration-color:var(--fg)}
 .nf-back:active{color:var(--muted)}
 .nf-log{margin-top:0}
