@@ -6,8 +6,7 @@
   const top=sheet&&sheet.querySelector('.ai-top');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const items=[...tools.children];
-  let played=false;
+    let played=false;
 
   /* ——— линейка: случайное поле без заданного направления ——— */
   let hov=false,bars=[],wave=null,raf=0,hold=0,t0=0,crestT=-1,crestC=0,crestA=0;
@@ -103,18 +102,11 @@
     top.addEventListener('pointercancel',()=>{down=false;if(raf)release(1000)});
   }
 
-  /* ——— появление: ряд за рядом ——— */
-  const later=[];
-  const at=(ms,f)=>later.push(setTimeout(f,ms));
-  function show(){items.forEach(el=>el.classList.add('on'))}
-  if(reduce)show();
-  else tools.classList.add('anim');
+  /* ——— при первом показе блока одна волна; карточки видны сразу, как в остальных разделах ——— */
   function play(){
     if(played)return;
     played=true;
-    if(reduce){show();return}
-    waveOn(3000);
-    items.forEach((el,i)=>at(200+i*85,()=>el.classList.add('on')));
+    if(!reduce)waveOn(3000);
   }
 
   build();
