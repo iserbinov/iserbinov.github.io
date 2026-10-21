@@ -84,7 +84,14 @@
 .edge-demo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5)}
 .edge-demo .box{block-size:var(--s8);border-radius:var(--r3);background:var(--bg);margin-bottom:var(--s3)}
 .edge-demo .e1{box-shadow:0 0 0 1px var(--edge)}
-.edge-demo .e2{box-shadow:var(--shadow)}
+.edge-demo .e2{box-shadow:0 0 0 1px var(--edge),var(--shadow-sheet)}
+.edge-demo .e3{background:var(--raise);box-shadow:0 0 0 1px var(--edge),var(--shadow-float)}
+.edge-demo.three{grid-template-columns:minmax(0,1fr);gap:var(--s4)}
+.edge-demo.three>div{display:grid;grid-template-columns:var(--s9) minmax(0,1fr);column-gap:var(--s4);align-items:start}
+.edge-demo.three .box{grid-row:1/4;margin-bottom:0}
+.edge-demo.three>div>*:not(.box){grid-column:2}
+@media (max-width:480px){.edge-demo.three>div{grid-template-columns:var(--s8) minmax(0,1fr);column-gap:var(--s3)}}
+.c-raise{background:var(--raise)}
 .edge-demo p{margin-top:var(--s1)}
 
 /* шрифты */
