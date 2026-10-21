@@ -244,6 +244,7 @@ html{scroll-padding-top:calc(var(--bar-h) + var(--s5))}
 .bar-menu{display:none}
 .bar-panel{display:contents}
 @media (max-width:820px){
+  :root{--bar-h:60px}
   .bar.has-menu{flex-wrap:nowrap;justify-content:space-between;padding:var(--s2) var(--s2) var(--s2) var(--s4)}
   .bar.has-menu .brand{width:auto;margin:0}
   .bar.has-menu .bar-menu{display:inline-flex;align-items:center;gap:var(--s3);min-block-size:44px;padding:0 var(--s3);border:0;border-radius:var(--r5);background:none;color:var(--fg);font:inherit;cursor:pointer}
