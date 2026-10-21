@@ -20,6 +20,8 @@
     var cur=btn&&btn.querySelector('.sx-cur-n');
     if(cur)cur.textContent=n+' '+links[n-1].textContent.replace(/^\d+/,'');
     menu(false);
+    // переключатель языка ведёт на тот же раздел на другом языке
+    document.querySelectorAll('[data-setlang]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').split('#')[0]+'#'+secs[n-1].id);});
     if(scroll&&top){
       var sec=document.getElementById(secs[n-1].id);
       var stuck=parseFloat(getComputedStyle(top).top)||0;
