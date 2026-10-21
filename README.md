@@ -5,7 +5,7 @@
 `index.html`: главная
 `en/index.html`, `en/projects/<кейс>/index.html`: английские главная и кейсы (журнал только на русском)
 `404.html`: страница ошибки
-`system/index.html`: документация токенов и компонентов сайта
+`system/index.html`, `en/system/index.html`: документация токенов и компонентов сайта (русская и английская версии)
 `changelog/index.html`: журнал изменений
 `projects/<кейс>/index.html`: страницы кейсов
 `assets/css`: `base.css` (токены и общие компоненты), `home.css`, `case.css`, `ecom.css`, `tetrika.css`, `element.css`, `sberklass.css`, `system.css`, `changelog.css`, `notfound.css`
