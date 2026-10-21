@@ -283,6 +283,10 @@
   .sx-js .sx-cur-m{color:var(--muted)}
   .sx-js .sys-idx{display:none;padding-bottom:var(--s2)}
   .sx-js .sx-top.open .sys-idx{display:grid}
+  .sx-js .sx-top.open .sx-cur{display:none}
+  .sx-js .sys-idx li:first-child a{border-top:0}
+  .sx-js .sys-idx a[aria-current]{box-shadow:none}
+  .sx-js .sys-idx a[aria-current]::after{content:"▴";margin-inline-start:auto;color:var(--muted)}
   .sc-t .tt-r{grid-template-columns:minmax(0,1fr)}
   .sc-t .tt-h{display:none}
 }

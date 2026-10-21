@@ -11,6 +11,7 @@
     if(!top||!btn)return;
     top.classList.toggle('open',open);
     btn.setAttribute('aria-expanded',open?'true':'false');
+    if(open){var c=top.querySelector('.sys-idx a[aria-current]');if(c)c.focus();}
   }
   function show(id,scroll){
     var n=0;
@@ -22,6 +23,9 @@
     menu(false);
     if(scroll){var t=top;window.scrollTo({top:Math.max(0,(t?t.offsetTop:0)-8),behavior:reduce?'auto':'smooth'});}
   }
+  links.forEach(function(a){a.addEventListener('click',function(e){
+    if(top&&top.classList.contains('open')&&a.getAttribute('aria-current')){e.preventDefault();menu(false);btn.focus();}
+  });});
   if(btn)btn.addEventListener('click',function(){menu(!top.classList.contains('open'));});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&top&&top.classList.contains('open')){menu(false);btn.focus();}});
   document.addEventListener('click',function(e){if(top&&top.classList.contains('open')&&!top.contains(e.target))menu(false);});
