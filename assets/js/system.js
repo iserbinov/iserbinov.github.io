@@ -5,7 +5,6 @@
   var top=document.querySelector('.sx-top');
   var btn=document.getElementById('sxCur');
   var links=[].slice.call(document.querySelectorAll('.sys-idx a'));
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   document.documentElement.classList.add('sx-js');
   function menu(open){
     if(!top||!btn)return;
@@ -21,7 +20,12 @@
     var cur=btn&&btn.querySelector('.sx-cur-n');
     if(cur)cur.textContent=n+' '+links[n-1].textContent.replace(/^\d+/,'');
     menu(false);
-    if(scroll){var t=top;window.scrollTo({top:Math.max(0,(t?t.offsetTop:0)-8),behavior:reduce?'auto':'smooth'});}
+    if(scroll&&top){
+      var sec=document.getElementById(secs[n-1].id);
+      var stuck=parseFloat(getComputedStyle(top).top)||0;
+      var y=window.pageYOffset+sec.getBoundingClientRect().top-(stuck+top.offsetHeight)-16;
+      window.scrollTo({top:Math.max(0,y),behavior:'auto'});
+    }
   }
   links.forEach(function(a){a.addEventListener('click',function(e){
     if(top&&top.classList.contains('open')&&a.getAttribute('aria-current')){e.preventDefault();menu(false);btn.focus();}
