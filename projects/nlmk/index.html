@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="text-scale" content="scale">
 <title>Дизайн-система НЛМК — Иван Сербинов</title>
 <meta name="description" content="Дизайн-система 2.0 НЛМК с нуля: исследование на заводах, токены, 46 компонентов, открытая часть, экономия около 1 млн долларов в год.">
 <meta property="og:title" content="Дизайн-система НЛМК — Иван Сербинов">
@@ -37,8 +38,8 @@
 </head>
 <body>
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<link rel="stylesheet" href="/assets/css/base.css?v=20261137">
-<link rel="stylesheet" href="/assets/css/case.css?v=20261136">
+<link rel="stylesheet" href="/assets/css/base.css?v=20261138">
+<link rel="stylesheet" href="/assets/css/case.css?v=20261138">
 
 <div class="wrap nospec" id="wrap">
   <header class="bar mono">
@@ -73,7 +74,7 @@
       
     </div>
     <div class="chap"><h2>Контекст и&nbsp;задача</h2><p>Дизайн-система 1.0 в&nbsp;НЛМК была перекрашенным Material UI. Задача: уйти от&nbsp;него к&nbsp;собственной дизайн-системе 2.0 для&nbsp;сложных производственных интерфейсов, MES-систем</p></div>
-    <div class="chap"><h2>Команда и&nbsp;роль</h2><div><p>2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я. На&nbsp;мне: дизайн, архитектура дизайн-системы, дизайн-лидерство и&nbsp;ресурсы</p><p>Нейминг, версионирование и&nbsp;документацию прорабатывали вместе с&nbsp;разработчиками</p></div></div>
+    <div class="chap"><h2>Команда и&nbsp;роль</h2><div><p>2&nbsp;разработчика, руководитель отдела дизайна и&nbsp;я.&nbsp;На&nbsp;мне: дизайн, архитектура дизайн-системы, дизайн-лидерство и&nbsp;ресурсы</p><p>Нейминг, версионирование и&nbsp;документацию прорабатывали вместе с&nbsp;разработчиками</p></div></div>
     <div class="chap wide"><h2>Подход</h2><div>
       <p>Начал с&nbsp;исследования: поездки на&nbsp;заводы к&nbsp;людям, которые работают с&nbsp;интерфейсами каждый день, запросы от&nbsp;дизайнеров, разбор дизайн-систем Сбера, Яндекса и&nbsp;Ozon. По&nbsp;итогам составил план из&nbsp;11&nbsp;этапов</p>
       <div class="plan" role="list" aria-label="Этапы создания дизайн-системы">
@@ -98,7 +99,7 @@
       <p>Ключевое решение: токены на&nbsp;стороне дизайна, варианты компонентов на&nbsp;стороне фронтенда. Токены собраны в&nbsp;Tokens Studio, потому что нативных токенов в&nbsp;Figma тогда ещё не&nbsp;было. Токены в&nbsp;4&nbsp;уровня: базовый цвет → палитра от&nbsp;50 до&nbsp;900 → семантический токен → токен компонента. Например, <code>base.primary-blue</code> → <code>primary-blue/700</code> → <code>primary-blue.default</code> → <code>ac.button.main-bg-def</code>. Так же&nbsp;устроены размеры: <code>size.base</code> 16 → <code>size.m</code> 36 → <code>input.m.height</code>. Токены хранятся в&nbsp;репозитории в&nbsp;JSON, у&nbsp;каждого есть описание</p>
       <figure class="cfig slide"><img src="/assets/nlmk/tokens.webp" alt="Схема токенов: цвет и размеры от базового значения до токена компонента" width="1920" height="1474" loading="lazy" decoding="async"><figcaption class="mono">Цепочки токенов цвета и&nbsp;размеров</figcaption></figure>
       <h3>Компоненты</h3>
-      <p>46&nbsp;базовых компонентов в&nbsp;дизайне и&nbsp;40 в&nbsp;коде. Сложные компоненты собраны из&nbsp;состояний и&nbsp;вариантов: у&nbsp;TreeList их больше 200</p>
+      <p>46&nbsp;базовых компонентов в&nbsp;дизайне и&nbsp;40 в&nbsp;коде. Сложные компоненты собраны из&nbsp;состояний и&nbsp;вариантов: у&nbsp;TreeList их&nbsp;больше 200</p>
       <figure class="cfig slide"><img src="/assets/nlmk/treelist.webp" alt="Варианты компонента TreeList" width="1920" height="1058" loading="lazy" decoding="async"><figcaption class="mono">TreeList: уровни вложенности, выбор, ошибки, предупреждения</figcaption></figure>
       <h3>Версионирование и&nbsp;обновления</h3>
       <p>Общий номер версии для&nbsp;дизайна и&nbsp;кода и&nbsp;отдельный суффикс для&nbsp;каждой стороны: <code>v02.11.98.des34</code> и&nbsp;<code>v02.11.98.fe67</code>. Об&nbsp;обновлениях команды узнают из&nbsp;рассылки: новые компоненты, доработки, ссылки на&nbsp;код и&nbsp;документацию</p>
