@@ -185,6 +185,7 @@ footer{padding-top:0}
 .cta .ways div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
 .cta .ways dt{color:var(--muted);margin:0}
 .cta .ways dd{margin:0;white-space:nowrap}
+.foot .tg{flex-wrap:wrap;gap:var(--s2) var(--s5)}
 .foot{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s6);padding-inline:4px;color:var(--muted)}
 .log{margin-top:var(--s4);border-top:1px solid var(--line);padding-top:var(--s4);display:grid;grid-template-columns:128px 1fr;gap:var(--s4);color:var(--muted)}
 .log>span{white-space:nowrap}
