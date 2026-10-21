@@ -36,5 +36,12 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&top&&top.classList.contains('open')){menu(false);btn.focus();}});
   document.addEventListener('click',function(e){if(top&&top.classList.contains('open')&&!top.contains(e.target))menu(false);});
   window.addEventListener('hashchange',function(){show((location.hash||'').slice(1),true);});
-  show((location.hash||'').slice(1),false);
+  var h0=(location.hash||'').slice(1);
+  show(h0,false);
+  // заход по адресу с разделом (в том числе после смены языка): раздел встаёт под вкладками с тем же отступом, что и при переключении
+  if(h0){
+    var go=function(){show(h0,true);};
+    go();
+    window.addEventListener('load',function(){requestAnimationFrame(go);},{once:true});
+  }
 })();
