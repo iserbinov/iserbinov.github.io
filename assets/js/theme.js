@@ -22,4 +22,17 @@
   document.querySelectorAll('[data-setlang]').forEach(a=>a.addEventListener('click',()=>{
     try{localStorage.setItem('lang',a.dataset.setlang)}catch(e){}
   }));
+
+  // меню шапки на узких экранах
+  const bar=document.querySelector('.bar'),mb=bar&&bar.querySelector('.bar-menu');
+  if(mb){
+    const lbl=mb.querySelector('.bar-lbl');
+    bar.classList.add('has-menu');
+    const set=o=>{bar.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);lbl.textContent=o?mb.dataset.close:mb.dataset.open};
+    mb.addEventListener('click',()=>set(!bar.classList.contains('open')));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&bar.classList.contains('open')){set(false);mb.focus()}});
+    document.addEventListener('click',e=>{if(!bar.contains(e.target))set(false)});
+    bar.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>set(false)));
+    matchMedia('(min-width:821px)').addEventListener('change',e=>{if(e.matches)set(false)});
+  }
 })();

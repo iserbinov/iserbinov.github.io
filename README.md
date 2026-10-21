@@ -5,10 +5,11 @@
 `index.html`: главная
 `en/index.html`, `en/projects/<кейс>/index.html`: английские главная и кейсы (журнал только на русском)
 `404.html`: страница ошибки
+`system/index.html`: документация токенов и компонентов сайта
 `changelog/index.html`: журнал изменений
 `projects/<кейс>/index.html`: страницы кейсов
-`assets/css`: `base.css` (токены и общие компоненты), `home.css`, `case.css`, `ecom.css`, `tetrika.css`, `element.css`, `sberklass.css`, `changelog.css`, `notfound.css`
-`assets/js`: `home.js` (разметка поверх страницы и таймлайн), `theme.js` (переключатель темы), `case.js` (увеличение иллюстраций в кейсах), `tune.js` (живые токены на первом экране: акцент, радиус, плотность)
+`assets/css`: `base.css` (токены и общие компоненты), `home.css`, `case.css`, `ecom.css`, `tetrika.css`, `element.css`, `sberklass.css`, `system.css`, `changelog.css`, `notfound.css`
+`assets/js`: `home.js` (разметка поверх страницы и таймлайн), `theme.js` (переключатель темы), `case.js` (увеличение иллюстраций в кейсах), `tune.js` (живые токены в карточке «Токены сайта»: акцент, радиус, плотность), `system.js` (переключение разделов на странице /system/)
 `assets/fonts`: локальные шрифты
 `assets/`: картинки WebP, `assets/talks`: обложки выступлений 1848×973
 `robots.txt`, `sitemap.xml`: для поисковиков; `llms.txt`: выжимка для ИИ-ассистентов, обновлять вместе с кейсами; `3b6776bcf391196d6b94c915e3d26d13.txt`: ключ IndexNow для Bing и Яндекса, не удалять; `google5a07cf46e2be9bab.html`: подтверждение Google Search Console, не удалять; `assets/og.png`: превью ссылки 1200×630
