@@ -53,8 +53,8 @@
 </head>
 <body>
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<link rel="stylesheet" href="/assets/css/base.css?v=20261135">
-<link rel="stylesheet" href="/assets/css/home.css?v=20261135">
+<link rel="stylesheet" href="/assets/css/base.css?v=20261136">
+<link rel="stylesheet" href="/assets/css/home.css?v=20261136">
 
 <div class="wrap" id="wrap">
   <header class="bar mono">
@@ -63,6 +63,7 @@
     <div class="bar-panel" id="barPanel">
     <nav aria-label="Основная">
       <a href="#work">Работа</a>
+      <details class="dd"><summary>Токены</summary><ul class="dd-l"><li><a href="#tokens">Токены сайта</a></li><li><a href="/system/">Документация</a></li></ul></details>
       <a href="#about">Обо мне</a>
       <a href="#contact">Контакты</a>
     </nav>
@@ -84,16 +85,6 @@
       </dl>
     </div>
   </div></div>
-
-  <div class="frame"><div class="fname mono"><span>frame/tokens</span><span class="size"></span></div><section class="sheet" id="tokens" aria-labelledby="tokensH">
-    <div class="head"><h2 id="tokensH">Токены сайта</h2></div>
-    <div class="tune mono" id="tune">
-          <div class="tn" role="group" aria-labelledby="tuneAc"><span id="tuneAc">акцент</span><label class="val"><span id="tuneHueV">#6CBAD3</span><input type="color" id="tuneColor" value="#6CBAD3" aria-label="Цвет акцента"></label><div class="sw"><label><input type="radio" name="ac" value="#6CBAD3" checked aria-label="голубой"><i style="--c:#6CBAD3"></i></label><label><input type="radio" name="ac" value="#EE6A35" aria-label="оранжевый"><i style="--c:#EE6A35"></i></label><label><input type="radio" name="ac" value="#09B378" aria-label="зелёный"><i style="--c:#09B378"></i></label><label><input type="radio" name="ac" value="#A87FE5" aria-label="фиолетовый"><i style="--c:#A87FE5"></i></label><label><input type="radio" name="ac" value="#DB6DA3" aria-label="розовый"><i style="--c:#DB6DA3"></i></label></div></div>
-          <div class="tn" role="radiogroup" aria-labelledby="tuneRk"><span id="tuneRk">скругления</span><input class="val" id="tuneRkV" type="text" inputmode="decimal" value="8 px" aria-label="Радиус скругления, px" autocomplete="off"><div class="seg"><label><input type="radio" name="rk" value="0"><span>нет</span></label><label><input type="radio" name="rk" value="8" checked><span>мягкие</span></label><label><input type="radio" name="rk" value="16"><span>сильные</span></label></div></div>
-          <div class="tn" role="radiogroup" aria-labelledby="tuneDk"><span id="tuneDk">плотность</span><input class="val" id="tuneDkV" type="text" inputmode="decimal" value="16 px" aria-label="Базовый отступ, px" autocomplete="off"><div class="seg"><label><input type="radio" name="dk" value="12"><span>плотно</span></label><label><input type="radio" name="dk" value="16" checked><span>обычно</span></label><label><input type="radio" name="dk" value="20"><span>свободно</span></label></div></div>
-          <button type="button" class="tune-x" id="tuneX" data-a="fill" data-tok="button/primary" data-pos="below" data-pad>по умолчанию</button>
-        </div>
-  </section></div>
 
   <div class="frame"><div class="fname mono"><span>frame/work</span><span class="size"></span></div><section class="sheet" id="work" aria-labelledby="workH">
     <div class="head"><h2 id="workH">Работа</h2></div>
@@ -237,6 +228,16 @@
     </details>
   </section></div>
 
+  <div class="frame"><div class="fname mono"><span>frame/tokens</span><span class="size"></span></div><section class="sheet" id="tokens" aria-labelledby="tokensH">
+    <div class="head"><h2 id="tokensH">Токены сайта</h2><a href="/system/">Документация →</a></div>
+    <div class="tune mono" id="tune">
+          <div class="tn" role="group" aria-labelledby="tuneAc"><span id="tuneAc">акцент</span><label class="val"><span id="tuneHueV">#6CBAD3</span><input type="color" id="tuneColor" value="#6CBAD3" aria-label="Цвет акцента"></label><div class="sw"><label><input type="radio" name="ac" value="#6CBAD3" checked aria-label="голубой"><i style="--c:#6CBAD3"></i></label><label><input type="radio" name="ac" value="#EE6A35" aria-label="оранжевый"><i style="--c:#EE6A35"></i></label><label><input type="radio" name="ac" value="#09B378" aria-label="зелёный"><i style="--c:#09B378"></i></label><label><input type="radio" name="ac" value="#A87FE5" aria-label="фиолетовый"><i style="--c:#A87FE5"></i></label><label><input type="radio" name="ac" value="#DB6DA3" aria-label="розовый"><i style="--c:#DB6DA3"></i></label></div></div>
+          <div class="tn" role="radiogroup" aria-labelledby="tuneRk"><span id="tuneRk">скругления</span><input class="val" id="tuneRkV" type="text" inputmode="decimal" value="8 px" aria-label="Радиус скругления, px" autocomplete="off"><div class="seg"><label><input type="radio" name="rk" value="0"><span>нет</span></label><label><input type="radio" name="rk" value="8" checked><span>мягкие</span></label><label><input type="radio" name="rk" value="16"><span>сильные</span></label></div></div>
+          <div class="tn" role="radiogroup" aria-labelledby="tuneDk"><span id="tuneDk">плотность</span><input class="val" id="tuneDkV" type="text" inputmode="decimal" value="16 px" aria-label="Базовый отступ, px" autocomplete="off"><div class="seg"><label><input type="radio" name="dk" value="12"><span>плотно</span></label><label><input type="radio" name="dk" value="16" checked><span>обычно</span></label><label><input type="radio" name="dk" value="20"><span>свободно</span></label></div></div>
+          <button type="button" class="tune-x" id="tuneX" data-a="fill" data-tok="button/primary" data-pos="below" data-pad>по умолчанию</button>
+        </div>
+  </section></div>
+
   <div class="frame"><div class="fname mono"><span>frame/ai</span><span class="size"></span></div><section class="sheet" id="tools" aria-labelledby="toolsH">
     <div class="ai-top">
       <div class="head"><h2 id="toolsH">AI-энтузиаст</h2><span class="label">каждый день</span></div>
@@ -338,7 +339,7 @@
 <script src="/assets/js/home.js?v=20261131"></script>
 <script src="/assets/js/tune.js?v=20261131" defer></script>
 <script src="/assets/js/ai.js?v=20261030"></script>
-<script src="/assets/js/theme.js?v=20261135"></script>
+<script src="/assets/js/theme.js?v=20261136"></script>
 <script data-goatcounter="https://serbinov.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

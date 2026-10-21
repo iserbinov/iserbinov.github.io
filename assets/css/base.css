@@ -259,3 +259,29 @@ html{scroll-padding-top:calc(var(--bar-h) + var(--s5))}
   .bar.has-menu .tg{flex-wrap:wrap;gap:var(--s2) var(--s5);padding-top:var(--s2)}
   .bar.has-menu .tg .toggle,.bar.has-menu .tg .langs a,.bar.has-menu .tg .lang-cur,.bar.has-menu .tg .lang-off{min-block-size:44px;display:inline-flex;align-items:center}
 }
+
+/* выпадающий пункт «Токены» в меню шапки */
+.bar nav .dd{position:relative}
+.bar nav .dd summary{display:inline-flex;align-items:center;gap:var(--s2);min-block-size:24px;list-style:none;color:var(--fg);cursor:pointer}
+.bar nav .dd summary::-webkit-details-marker{display:none}
+.bar nav .dd summary::after{content:"";inline-size:5px;block-size:5px;margin-block-end:3px;border:solid currentColor;border-width:0 1px 1px 0;transform:rotate(45deg);transition:transform .15s}
+.bar nav .dd[open] summary::after{transform:rotate(225deg);margin-block-end:-2px}
+.bar nav .dd summary:hover{color:var(--spec-text)}
+.bar nav .dd summary:focus-visible,.bar nav .dd-l a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.dd-l{position:absolute;z-index:21;inset-block-start:calc(100% + var(--s3));inset-inline-start:calc(var(--s3)*-1);min-inline-size:calc(var(--s9) + var(--s7));margin:0;padding:var(--s2);list-style:none;background:var(--bg);border-radius:var(--r4);box-shadow:0 0 0 1px var(--edge),var(--shadow)}
+.bar nav .dd-l a{display:flex;align-items:center;min-block-size:var(--s6);padding-inline:var(--s3);border-radius:var(--r3);white-space:nowrap}
+.bar nav .dd-l a:hover{background:var(--surface);color:var(--fg)}
+.bar nav .dd-l a[aria-current]{color:var(--accent)}
+.head a{font:400 12px/1.5 var(--f-mono);letter-spacing:.02em;color:var(--muted);text-decoration-color:var(--line)}
+.head a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.head a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (pointer:coarse){.head a{display:inline-flex;align-items:center;min-block-size:44px}}
+@media (max-width:820px){
+  .bar.has-menu nav .dd{inline-size:100%;border-bottom:1px solid var(--line)}
+  .bar.has-menu nav .dd summary{inline-size:100%;min-block-size:48px;justify-content:space-between}
+  .bar.has-menu nav .dd[open] summary{color:var(--accent)}
+  .bar.has-menu .dd-l{position:static;min-inline-size:0;padding:0 0 var(--s2) var(--s4);background:none;box-shadow:none}
+  .bar.has-menu nav .dd-l a{min-block-size:44px;padding-inline:0;border-bottom:0}
+  .bar.has-menu nav .dd-l a:hover{background:none;color:var(--accent)}
+}
+@media (prefers-reduced-motion:reduce){.bar nav .dd summary::after{transition:none}}

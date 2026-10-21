@@ -35,4 +35,16 @@
     bar.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>set(false)));
     matchMedia('(min-width:821px)').addEventListener('change',e=>{if(e.matches)set(false)});
   }
+
+  // дропдаун «Токены»: закрывается по Esc, клику вне меню и выбору пункта
+  const dds=[...document.querySelectorAll('.bar .dd')];
+  dds.forEach(d=>{
+    d.addEventListener('toggle',()=>{if(d.open)dds.forEach(o=>{if(o!==d)o.open=false})});
+    d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{d.open=false}));
+  });
+  document.addEventListener('click',e=>dds.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false}));
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape')return;
+    dds.forEach(d=>{if(d.open){d.open=false;d.querySelector('summary').focus()}});
+  });
 })();
