@@ -31,6 +31,10 @@ English: https://serbinov.com/en/, CV in English: https://serbinov.com/assets/Iv
 
 Ранний опыт: OWEN Education (Китай, 2018–19), старший продуктовый дизайнер, онлайн-школа внутри WeChat. Международное СМИ (2014–17), тимлид отдела графического дизайна, редизайн сайта, приложения и соцсетей испаноязычного канала.
 
+## Документация сайта
+
+- [Система сайта](https://serbinov.com/system/): токены и компоненты этого сайта, цвет, шрифты, отступы, скругления, состояния и доступность. English: https://serbinov.com/en/system/
+
 ## AI в работе
 
 Работает с AI каждый день: исследования и гипотезы, живые прототипы и вёрстка (Claude, Codex), документация из Markdown в Figma (свой плагин TUI Doc Builder), обход сайтов под авторизацией (свой инструмент site-flow-mapper: https://github.com/iserbinov/site-flow-mapper), агенты с базой знаний в рабочих чатах, автоматическое заведение задач в Jira. Инструменты: Claude, Cowork, Codex, Gemini, ChatGPT.
