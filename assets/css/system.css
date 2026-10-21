@@ -256,7 +256,7 @@
 
 
 /* навигация по разделам: вкладки на компьютере, меню и нижняя панель на мобильных */
-.sx-top{position:sticky;top:calc(var(--s2) + var(--bar-h));z-index:6;background:var(--canvas);margin-top:var(--s3);border-bottom:1px solid var(--line)}
+.sx-top{padding-inline-start:var(--bar-pl);position:sticky;top:calc(var(--s2) + var(--bar-h));z-index:6;background:var(--canvas);margin-top:var(--s3);border-bottom:1px solid var(--line)}
 .sys-idx{display:flex;flex-wrap:wrap;gap:0 var(--s5);margin:0;padding:0;list-style:none}
 .sys-idx a{display:inline-flex;gap:var(--s2);align-items:center;min-block-size:40px;text-decoration:none;color:var(--fg);white-space:nowrap}
 .sys-idx a:hover{color:var(--accent)}
@@ -276,6 +276,7 @@
 @media (max-width:720px){
   
   .sx-top{margin-inline:calc(var(--s4)*-1);padding-inline:var(--s4)}
+  .sx-js .sx-top .sx-cur,.sx-top .sys-idx a{padding-inline-start:var(--bar-pl)}
   .sys-idx{display:grid;gap:0}
   .sys-idx a{min-block-size:48px;inline-size:100%;border-top:1px solid var(--line)}
   .sx-js .sx-cur{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);inline-size:100%;min-block-size:48px;padding:0;border:0;background:none;color:var(--fg);font:400 0.8125rem/1.2 var(--f-mono);letter-spacing:.02em;cursor:pointer;text-align:left}
