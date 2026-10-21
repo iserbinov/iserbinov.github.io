@@ -51,10 +51,10 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<link rel="stylesheet" href="/assets/css/base.css?v=20261122">
-<link rel="stylesheet" href="/assets/css/home.css?v=20261113">
+<link rel="stylesheet" href="/assets/css/base.css?v=20261132">
+<link rel="stylesheet" href="/assets/css/home.css?v=20261130">
 
-<div class="wrap nospec" id="wrap">
+<div class="wrap" id="wrap">
   <header class="bar mono">
     <span class="brand">serbinov.com</span>
     <nav aria-label="Main">
@@ -62,7 +62,7 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <span class="tg"><a class="cv" href="/assets/Ivan-Serbinov-CV-en.pdf" lang="en">CV</a><span class="langs" role="group" aria-label="Language"><a href="/" hreflang="ru" lang="ru" data-setlang="ru">RU</a><span aria-hidden="true">·</span><span class="lang-cur" aria-current="true">EN</span></span></span>
+    <span class="tg"><span class="langs" role="group" aria-label="Language"><a href="/" hreflang="ru" lang="ru" data-setlang="ru">RU</a><span aria-hidden="true">·</span><span class="lang-cur" aria-current="true">EN</span></span><button class="toggle mono" id="themeToggle">theme: auto</button><button class="toggle mono" id="specToggle" aria-pressed="true">specs</button></span>
   </header>
 <main id="main" tabindex="-1">
 
@@ -71,13 +71,15 @@
     <h1 class="name" id="name">Ivan Serbinov<span class="bl" id="bl"></span></h1>
     <div class="lede" id="lede">
       <p data-a="type" data-tok="type/lead">Lead Product Designer&nbsp;· Design Systems</p>
-      <dl class="facts mono" data-a="fill-text" data-tok="text/secondary">
-        <dt>Now</dt><dd class="now">T-Bank, TUI design system · since 03.2026</dd>
-        <dt>Role</dt><dd>Senior Design System Designer</dd>
-        <dt>Experience</dt><dd>12 years, 6 in design systems</dd>
-        <dt>City</dt><dd>Moscow · RU / EN C1</dd>
-        <dt>Contact</dt><dd><a href="/assets/Ivan-Serbinov-CV-en.pdf">CV, PDF</a> · <a href="https://t.me/ivanserbinov">Telegram ↗</a></dd>
-      </dl>
+      <details class="tune-d" id="tuneD">
+        <summary><span>Site tokens</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="tune mono" id="tune">
+          <div class="tn" role="group" aria-labelledby="tuneAc"><span id="tuneAc">accent</span><label class="val"><span id="tuneHueV">#6CBAD3</span><input type="color" id="tuneColor" value="#6CBAD3" aria-label="Accent color"></label><div class="sw"><label><input type="radio" name="ac" value="#6CBAD3" checked aria-label="blue"><i style="--c:#6CBAD3"></i></label><label><input type="radio" name="ac" value="#EE6A35" aria-label="orange"><i style="--c:#EE6A35"></i></label><label><input type="radio" name="ac" value="#09B378" aria-label="green"><i style="--c:#09B378"></i></label><label><input type="radio" name="ac" value="#A87FE5" aria-label="violet"><i style="--c:#A87FE5"></i></label><label><input type="radio" name="ac" value="#DB6DA3" aria-label="pink"><i style="--c:#DB6DA3"></i></label></div></div>
+          <div class="tn" role="radiogroup" aria-labelledby="tuneRk"><span id="tuneRk">rounding</span><input class="val" id="tuneRkV" type="text" inputmode="decimal" value="8 px" aria-label="Corner radius, px" autocomplete="off"><div class="seg"><label><input type="radio" name="rk" value="0"><span>none</span></label><label><input type="radio" name="rk" value="8" checked><span>soft</span></label><label><input type="radio" name="rk" value="16"><span>strong</span></label></div></div>
+          <div class="tn" role="radiogroup" aria-labelledby="tuneDk"><span id="tuneDk">density</span><input class="val" id="tuneDkV" type="text" inputmode="decimal" value="16 px" aria-label="Base spacing, px" autocomplete="off"><div class="seg"><label><input type="radio" name="dk" value="12"><span>tight</span></label><label><input type="radio" name="dk" value="16" checked><span>normal</span></label><label><input type="radio" name="dk" value="20"><span>loose</span></label></div></div>
+          <button type="button" class="tune-x" id="tuneX" data-a="fill" data-tok="button/primary" data-pos="below" data-pad>default</button>
+        </div>
+      </details>
     </div>
   </div></div>
 
@@ -317,12 +319,13 @@
     </div></div>
     <div class="foot mono">
       <span>© 2026 <a href="/en/">Ivan Serbinov</a></span>
-      <span class="tg"><button class="toggle mono" id="themeToggle">theme: auto</button><button class="toggle mono" id="specToggle" aria-pressed="false">specs</button><a href="/changelog/" hreflang="ru">v1.11.26 · changelog (in&nbsp;Russian)</a></span>
+      <a href="/changelog/" hreflang="ru">v1.11.26 · changelog (in&nbsp;Russian)</a>
     </div>
   </footer>
 </div>
 
-<script src="/assets/js/home.js?v=20261028"></script>
+<script src="/assets/js/home.js?v=20261131"></script>
+<script src="/assets/js/tune.js?v=20261131" defer></script>
 <script src="/assets/js/ai.js?v=20261030"></script>
 <script src="/assets/js/theme.js?v=20261118"></script>
 <script data-goatcounter="https://serbinov.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

@@ -1,5 +1,5 @@
 
-.fname{display:flex;justify-content:space-between;gap:12px;color:var(--spec-text);padding:0 4px 8px;transition:opacity .25s}
+.fname{display:flex;justify-content:space-between;gap:12px;color:var(--mk-text);padding:0 4px 8px;transition:opacity .25s}
 .nospec .fname{opacity:0}
 .nospec .ov{opacity:0}
 .what small{display:block;margin-top:6px;font:400 14px/1.5 var(--f-body);color:var(--muted)}
@@ -28,7 +28,7 @@
 /* карточки: две колонки */
 .tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s7);margin-top:var(--s6)}
 .tools .tool:nth-child(-n+2){border-top:1px solid var(--line)}
-.tools .tool{align-items:baseline;align-content:start}
+.tools .tool{align-items:center;align-content:start}
 .tools .tool .mono{line-height:1.3}
 
 /* стек одной строкой */
@@ -41,3 +41,39 @@
 /* KPI с длинной цифрой ($250 млн): колонки переносятся, а не наезжают друг на друга */
 .kpis.fit{grid-template-columns:repeat(auto-fit,minmax(min(100%,calc(var(--s9)*1.75)),1fr))}
 @media (prefers-reduced-motion:reduce){.eq i{transition:none}}
+
+/* живые токены на первом экране (tune.js): значения читаются как спецификация */
+.tune-d{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tune-d summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding-block:var(--s3);list-style:none;cursor:pointer;font:400 12px/1.5 var(--f-mono);letter-spacing:.02em}
+.tune-d summary::-webkit-details-marker{display:none}
+.tune-d summary:hover span:first-child{color:var(--accent)}
+.tune-d[open] .plus{transform:rotate(45deg);color:var(--accent)}
+.tune{display:grid;gap:var(--s3);padding-block:var(--s2) var(--s4)}
+.tune-x{justify-self:end;margin-top:var(--s2);padding:var(--s3) var(--s5);border:0;border-radius:var(--r3);background:var(--accent-fill);color:var(--on-accent);font:500 12px/1.2 var(--f-mono);letter-spacing:.02em;cursor:pointer}
+.tune-x:hover{background:var(--accent);color:var(--bg)}
+.tune-x:active{opacity:.85}
+.tn{display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--s2) var(--s4)}
+.tn>:first-child{grid-column:1/-1}
+.tn>.sw,.tn>.seg{grid-column:1;grid-row:2}
+.tn>.val{grid-column:2;grid-row:2}
+.tn>span:first-child{color:var(--muted)}
+.val{position:relative;display:inline-block;inline-size:9ch;padding:0;border:0;border-bottom:1px dashed var(--muted);background:none;color:var(--fg);font:inherit;text-align:right;font-variant-numeric:tabular-nums;cursor:text}
+.val{inline-size:8ch}
+label.val{cursor:pointer}
+label.val input{position:absolute;inset:0;inline-size:100%;block-size:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer}
+.val:hover,.val:focus-visible,.val:focus-within{border-bottom-color:var(--accent)}
+.val:focus-visible,.val:focus-within{outline:2px solid var(--spec-text);outline-offset:3px}
+.sw{display:flex;gap:var(--s3)}
+.sw label{position:relative;display:inline-flex}
+.sw input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
+.sw i{display:block;inline-size:24px;block-size:24px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px var(--edge)}
+.sw input:checked+i{box-shadow:0 0 0 2px var(--bg),0 0 0 3px var(--fg)}
+.sw input:focus-visible+i{outline:2px solid var(--spec-text);outline-offset:4px}
+.seg{display:flex;flex-wrap:wrap;gap:0 var(--s4)}
+.seg label{position:relative;display:inline-flex}
+.seg input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
+.seg span{display:inline-flex;align-items:center;min-block-size:24px;color:var(--muted);text-underline-offset:4px}
+.seg label:hover span{color:var(--fg)}
+.seg input:checked+span{color:var(--fg);text-decoration:underline;text-decoration-color:var(--accent-fill)}
+.seg input:focus-visible+span{outline:2px solid var(--spec-text);outline-offset:3px}
+@media (pointer:coarse){.seg span,.tune-x{min-block-size:44px}.sw i,@media (max-width:480px){.tune{gap:var(--s4)}}

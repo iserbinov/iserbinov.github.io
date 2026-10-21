@@ -8,10 +8,15 @@
   svg.setAttribute('class','ov');
   svg.setAttribute('aria-hidden','true');
   wrap.appendChild(svg);
+  /* цвет в любом формате (rgb, oklch) приводим к hex через canvas */
+  const px=document.createElement('canvas').getContext('2d',{willReadFrequently:true});
+  px.canvas.width=px.canvas.height=1;
   const hex=c=>{
-    const m=c.match(/[\d.]+/g);
-    if(!m)return c;
-    return '#'+m.slice(0,3).map(v=>(+v|0).toString(16).padStart(2,'0')).join('').toUpperCase();
+    px.clearRect(0,0,1,1);
+    px.fillStyle='#000';
+    px.fillStyle=c;
+    px.fillRect(0,0,1,1);
+    return '#'+[...px.getImageData(0,0,1,1).data].slice(0,3).map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
   };
 
   function layoutRuler(){
@@ -105,7 +110,8 @@
       const li=[...stk.children].map(R);
       const cs=getComputedStyle(stk);
       const cg=Math.round(parseFloat(cs.columnGap)),rg=Math.round(parseFloat(cs.rowGap));
-      const tk=v=>({4:'s1',8:'s2',12:'s3',16:'s4',24:'s5',32:'s6',48:'s7',72:'s8',120:'s9'}[v]||'');
+      const dk=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dk'))||1;
+      const tk=v=>({4:'s1',8:'s2',12:'s3',16:'s4',24:'s5',32:'s6',48:'s7',72:'s8',120:'s9'}[Math.round(v/dk)]||'');
       let first=true,rowDone=false;
       const wrapped=li.some(q=>Math.abs(q.y-li[0].y)>=4);
       for(let i=1;i<li.length;i++){
@@ -136,15 +142,19 @@
     const st=parseFloat(scs.paddingTop);
     const rad=parseFloat(scs.borderTopLeftRadius);
     const ym=n.y+n.h*.3;
-    E('line',{x1:sr.x,y1:ym,x2:sr.x+sp,y2:ym});
-    label(sr.x+sp/2,ym,Math.round(sp)+'','middle');
+    /* на сколько скруглённый верхний угол отступает от прямого края на расстоянии t от угла */
+    const inset=t=>t>=rad?0:rad-Math.sqrt(rad*rad-(rad-t)*(rad-t));
+    const xl=sr.x+inset(ym-sr.y);
+    E('line',{x1:xl,y1:ym,x2:sr.x+sp,y2:ym});
+    label((xl+sr.x+sp)/2,ym,Math.round(sp)+'','middle');
     E('line',{class:'d',x1:sr.x,y1:b.y,x2:sr.r,y2:b.y});
     label(sr.r-8,b.y,'baseline','end');
     const xt=sr.r-sp/2;
-    E('line',{x1:xt,y1:sr.y,x2:xt,y2:n.y});
+    const yt=sr.y+inset(sr.r-xt);
+    E('line',{x1:xt,y1:yt,x2:xt,y2:n.y});
     E('line',{x1:xt-5,y1:n.y,x2:xt+5,y2:n.y});
     E('line',{class:'d',x1:n.r,y1:n.y,x2:xt-5,y2:n.y});
-    label(xt,sr.y+st/2,Math.round(st)+'','middle');
+    label(xt,(yt+n.y)/2,Math.round(st)+'','middle');
     E('path',{class:'d',d:`M${sr.x} ${sr.y+rad} A${rad} ${rad} 0 0 1 ${sr.x+rad} ${sr.y}`});
     label(sr.x+rad+8,sr.y+14,'radius/card · '+Math.round(rad),'start');
 
@@ -165,9 +175,6 @@
         E('path',{class:'d',d:`M${r.x} ${r.y}H${r.r}V${r.b}H${r.x}Z`});
         label(r.x,r.y-10,`${tok} · ${Math.round(parseFloat(s.fontSize))}/${Math.round(parseFloat(s.lineHeight))} · ${s.fontWeight}`,'start',s.color);
       }
-      if(a==='fill-text'){
-        label(r.x,r.y-12,`${tok} ${hex(getComputedStyle(el.querySelector('dt')).color)} · accent ${hex(getComputedStyle(el.querySelector('.now')).color)}`,'start',getComputedStyle(el.querySelector('dt')).color);
-      }
       if(a==='img'){
         E('path',{class:'d',d:`M${r.x} ${r.y}H${r.r}V${r.b}H${r.x}Z`});
         const rr=parseFloat(s.borderTopLeftRadius);
@@ -178,7 +185,10 @@
       }
       if(a==='fill'){
         E('path',{class:'d',d:`M${r.x} ${r.y}H${r.r}V${r.b}H${r.x}Z`});
-        label(r.r-8,r.y+14,`${tok} ${hex(s.backgroundColor)} · r ${Math.round(parseFloat(s.borderTopLeftRadius))} ${el.dataset.ratio?' · '+el.dataset.ratio:''}`,'end',s.backgroundColor);
+        const pad=el.dataset.pad!==undefined?` · p ${Math.round(parseFloat(s.paddingTop))}/${Math.round(parseFloat(s.paddingLeft))}`:'';
+        const txt=`${tok} ${hex(s.backgroundColor)} · r ${Math.round(parseFloat(s.borderTopLeftRadius))}${pad}${el.dataset.ratio?' · '+el.dataset.ratio:''}`;
+        if(el.dataset.pos==='below')label(r.r,r.b+14,txt,'end',s.backgroundColor);
+        else label(r.r-8,r.y+14,txt,'end',s.backgroundColor);
       }
       if(a==='gap'){
         const prev=el.previousElementSibling;
