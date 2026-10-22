@@ -20,6 +20,7 @@
     var cur=btn&&btn.querySelector('.sx-cur-n');
     if(cur)cur.textContent=n+' '+links[n-1].textContent.replace(/^\d+/,'');
     menu(false);
+    offset();
     // переключатель языка ведёт на тот же раздел на другом языке
     document.querySelectorAll('[data-setlang]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').split('#')[0]+'#'+secs[n-1].id);});
     if(scroll&&top){
@@ -36,12 +37,16 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&top&&top.classList.contains('open')){menu(false);btn.focus();}});
   document.addEventListener('click',function(e){if(top&&top.classList.contains('open')&&!top.contains(e.target))menu(false);});
   window.addEventListener('hashchange',function(){show((location.hash||'').slice(1),true);});
+  // отступ под липкой шапкой и вкладками: по нему встаёт и свой скролл, и родной переход браузера по якорю
+  function offset(){
+    if(!top)return;
+    var stuck=parseFloat(getComputedStyle(top).top)||0;
+    document.documentElement.style.setProperty('--sx-off',(stuck+top.offsetHeight+16)+'px');
+  }
+  offset();
+  window.addEventListener('resize',offset);
   var h0=(location.hash||'').slice(1);
   show(h0,false);
-  // заход по адресу с разделом (в том числе после смены языка): раздел встаёт под вкладками с тем же отступом, что и при переключении
-  if(h0){
-    var go=function(){show(h0,true);};
-    go();
-    window.addEventListener('load',function(){requestAnimationFrame(go);},{once:true});
-  }
+  // заход по адресу с разделом (в том числе после смены языка): раздел сразу встаёт под вкладками, без прыжка после загрузки
+  if(h0)show(h0,true);
 })();
