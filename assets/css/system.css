@@ -264,6 +264,8 @@
 
 /* навигация по разделам: вкладки на компьютере, меню и нижняя панель на мобильных */
 .sx{scroll-margin-top:var(--sx-off,0px)}
+/* до запуска скрипта лишние разделы скрыты, чтобы страница не перестраивалась после первой отрисовки */
+.sx-0 .sx:not(#principle),.sx-h .sx:not(:target){display:none}
 .sx-top{padding-inline-start:var(--bar-pl);position:sticky;top:calc(var(--s2) + var(--bar-h));z-index:6;background:var(--canvas);margin-top:var(--s3);border-bottom:1px solid var(--line)}
 .sys-idx{display:flex;flex-wrap:wrap;gap:0 var(--s5);margin:0;padding:0;list-style:none}
 .sys-idx a{display:inline-flex;gap:var(--s2);align-items:center;min-block-size:40px;text-decoration:none;color:var(--fg);white-space:nowrap}

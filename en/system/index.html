@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <!-- Critical minimum: background and theme before styles load -->
 <script>
-(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}var d=document.documentElement;d.classList.add('sx-js',location.hash.length>1?'sx-h':'sx-0');})();
 </script>
 <style>body{margin:0;background:#F6F6F4}@media (prefers-color-scheme:dark){html:not([data-theme="light"]) body{background:#0F0F0E}}html[data-theme="dark"] body{background:#0F0F0E}</style>
 </head>
@@ -41,7 +41,7 @@
 <link rel="stylesheet" href="/assets/css/base.css?v=20261143">
 <link rel="stylesheet" href="/assets/css/case.css?v=20261138">
 <link rel="stylesheet" href="/assets/css/home.css?v=20261138">
-<link rel="stylesheet" href="/assets/css/system.css?v=20261144">
+<link rel="stylesheet" href="/assets/css/system.css?v=20261145">
 <div class="wrap nospec" id="wrap">
   <header class="bar mono">
     <a class="brand" href="/en/">serbinov.com</a>
@@ -127,7 +127,7 @@
   </footer>
 </div>
 <script src="/assets/js/theme.js?v=20261136"></script>
-<script src="/assets/js/system.js?v=20261144"></script>
+<script src="/assets/js/system.js?v=20261145"></script>
 <script data-goatcounter="https://serbinov.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

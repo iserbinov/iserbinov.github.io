@@ -47,6 +47,7 @@
   window.addEventListener('resize',offset);
   var h0=(location.hash||'').slice(1);
   show(h0,false);
+  document.documentElement.classList.remove('sx-0','sx-h');
   // заход по адресу с разделом (в том числе после смены языка): раздел сразу встаёт под вкладками, без прыжка после загрузки
   if(h0)show(h0,true);
 })();
