@@ -66,7 +66,7 @@
   --r-font-weight-regular:400;
   --r-font-weight-medium:500;
   --r-font-weight-semibold:600;
-  --r-font-family-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --r-font-family-sans:'Inter','Noto Sans Arabic','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC','Noto Sans CJK SC',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --r-font-family-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --r-control-height-m:40px;
   --r-control-height-l:48px;
@@ -88,7 +88,8 @@
   --r-type-heading-m:var(--r-font-weight-semibold) var(--r-font-size-20)/var(--r-font-lineHeight-28) var(--r-font-family-sans);
   --r-type-body-m:var(--r-font-weight-regular) var(--r-font-size-16)/var(--r-font-lineHeight-24) var(--r-font-family-sans);
   --r-type-body-s:var(--r-font-weight-regular) var(--r-font-size-14)/var(--r-font-lineHeight-20) var(--r-font-family-sans);
-  --r-type-label:var(--r-font-weight-medium) var(--r-font-size-14)/var(--r-font-lineHeight-20) var(--r-font-family-sans);
+  --r-type-label-l:var(--r-font-weight-medium) var(--r-font-size-16)/var(--r-font-lineHeight-24) var(--r-font-family-sans);
+  --r-type-label-m:var(--r-font-weight-medium) var(--r-font-size-14)/var(--r-font-lineHeight-20) var(--r-font-family-sans);
   --r-type-caption:var(--r-font-weight-regular) var(--r-font-size-12)/var(--r-font-lineHeight-16) var(--r-font-family-sans);
 }
 /* Component tier: re-evaluated wherever a theme is set, including nested scopes */

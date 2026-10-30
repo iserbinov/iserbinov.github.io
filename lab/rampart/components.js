@@ -111,7 +111,8 @@ const fieldApi = (input, shell) => ({
 // ---------- TextField ----------
 export function TextField({ label, name, type = 'text', value = '', placeholder, autocomplete, inputmode, hint, required = true, disabled, readonly, state, requiredLabel, autocapitalize, spellcheck }) {
   const inputId = id(name || 'f');
-  const input = h('input', { class: 'r-field__input', id: inputId, name, type, value, placeholder, autocomplete, inputmode, disabled, readonly, required: required ? true : null, 'aria-required': required ? 'true' : null, autocapitalize, spellcheck });
+  // Emails are left-to-right in every language; in Arabic the field keeps LTR text but aligns to the start edge
+  const input = h('input', { class: 'r-field__input', id: inputId, name, type, value, placeholder, autocomplete, inputmode, disabled, readonly, dir: type === 'email' ? 'ltr' : null, required: required ? true : null, 'aria-required': required ? 'true' : null, autocapitalize, spellcheck });
   input.value = value;
   const shell = FieldShell({ label, labelFor: inputId, control: h('div', { class: 'r-field__control' }, input), hint, state });
   if (disabled) shell.root.classList.add('is-disabled');
@@ -125,7 +126,7 @@ export function TextField({ label, name, type = 'text', value = '', placeholder,
 // mode "new": length counter against the minimum (NIST 800-63B: length over composition), no character-class rules.
 export function PasswordField({ label, name = 'password', mode = 'current', min = 15, t, aside, value = '', state }) {
   const inputId = id(name);
-  const input = h('input', { class: 'r-field__input', id: inputId, name, type: 'password', value, autocomplete: mode === 'new' ? 'new-password' : 'current-password', required: true, 'aria-required': 'true', spellcheck: 'false', autocapitalize: 'off', minlength: mode === 'new' ? min : null, maxlength: 128 });
+  const input = h('input', { class: 'r-field__input', id: inputId, name, type: 'password', dir: 'ltr', value, autocomplete: mode === 'new' ? 'new-password' : 'current-password', required: true, 'aria-required': 'true', spellcheck: 'false', autocapitalize: 'off', minlength: mode === 'new' ? min : null, maxlength: 128 });
   input.value = value;
   const toggle = h('button', { class: 'r-icon-button', type: 'button', 'aria-label': t('action.show-password'), 'aria-pressed': 'false', 'aria-controls': inputId, html: icon.eye });
   toggle.addEventListener('click', () => {
@@ -158,17 +159,18 @@ export function PasswordField({ label, name = 'password', mode = 'current', min 
 // One real input (autocomplete="one-time-code", paste and SMS autofill work), six cells drawn from its value.
 export function CodeInput({ label, length = 6, onComplete, value = '', state }) {
   const inputId = id('code');
-  const input = h('input', { class: 'r-code__input', id: inputId, name: 'code', inputmode: 'numeric', autocomplete: 'one-time-code', maxlength: length, pattern: '[0-9]*', required: true, 'aria-required': 'true' });
+  const input = h('input', { class: 'r-code__input', id: inputId, name: 'code', dir: 'ltr', inputmode: 'numeric', autocomplete: 'one-time-code', maxlength: length, pattern: '[0-9]*', required: true, 'aria-required': 'true' });
   input.value = value;
   const cells = Array.from({ length }, () => h('span', { class: 'r-code__cell', 'aria-hidden': 'true' }));
-  const wrap = h('div', { class: 'r-code' }, cells, input);
+  const wrap = h('div', { class: 'r-code', dir: 'ltr' }, cells, input);
   const draw = () => {
     const v = input.value;
     const focused = document.activeElement === input || state === 'focus';
     cells.forEach((c, i) => { c.textContent = v[i] || ''; c.classList.toggle('is-active', focused && i === Math.min(v.length, length - 1)); });
   };
   input.addEventListener('input', () => {
-    input.value = input.value.replace(/\D/g, '').slice(0, length);
+    // Arabic-Indic (٠–٩) and Persian (۰–۹) digits typed on an Arabic keyboard count as 0–9
+    input.value = input.value.replace(/[\u0660-\u0669\u06F0-\u06F9]/g, (ch) => String(ch.charCodeAt(0) & 0xF)).replace(/\D/g, '').slice(0, length);
     draw(); api.setError('');
     if (input.value.length === length && onComplete) onComplete(input.value);
   });
@@ -206,7 +208,7 @@ export function Select({ label, options, value, onChange, srLabel = true }) {
   const select = h('select', { class: 'r-select', id: sid }, options.map(([v, text, lang]) => h('option', { value: v, lang }, text)));
   select.value = value;
   select.addEventListener('change', () => onChange(select.value));
-  return h('div', { class: 'r-select-wrap' }, h('label', { for: sid, class: srLabel ? 'r-sr' : 'r-caption r-secondary', style: srLabel ? null : 'margin-right:8px' }, label), select, h('span', { html: icon.chevronDown, style: 'display:contents' }));
+  return h('div', { class: 'r-select-wrap' }, h('label', { for: sid, class: srLabel ? 'r-sr' : 'r-caption r-secondary', style: srLabel ? null : 'margin-inline-end:8px' }, label), select, h('span', { html: icon.chevronDown, style: 'display:contents' }));
 }
 
 export const LanguageSwitcher = ({ t, lang, langs, onChange }) =>

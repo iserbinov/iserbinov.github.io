@@ -1,6 +1,6 @@
 // Rampart sign-in prototype: screens composed only from components.js. Mock backend, no network.
 import { h, Button, Link, TextField, PasswordField, CodeInput, Checkbox, InlineAlert, Divider, LanguageSwitcher, ThemeSwitcher, TenantOption, AuthCard, AuthLayout, BrandMark, icon } from './components.js';
-import { LANGS, initialLang, saveLang, initialTheme, applyTheme, translator, langName, onExternalChange } from './env.js';
+import { LANGS, initialLang, saveLang, initialTheme, applyTheme, translator, langName, onExternalChange, applyLang } from './env.js';
 
 const DEMO_PASSWORD = 'rampart-demo';
 const DEMO_CODE = '123456';
@@ -189,7 +189,7 @@ const screens = {
   invite(card) {
     S.email = 'alex@northwind.example';
     return newPassword(card, {
-      title: t('invite.title'), subtitle: t('invite.subtitle', { inviter: S.lang === 'ru' ? 'Анна Смирнова' : 'Anna Smirnova', org: ORG }), action: t('action.activate'),
+      title: t('invite.title'), subtitle: t('invite.subtitle', { inviter: ({ ru: 'Анна Смирнова', ar: 'آنا سميرنوفا' })[S.lang] || 'Anna Smirnova', org: ORG }), action: t('action.activate'),
       before: [TextField({ label: t('field.email'), name: 'email', type: 'email', autocomplete: 'username', value: S.email, readonly: true, required: false })], withName: true,
     });
   },
@@ -304,7 +304,7 @@ function saveDraft() {
 
 function render({ focus = true } = {}) {
   clearInterval(timer); clearTimeout(timer);
-  document.documentElement.lang = S.lang;
+  applyLang(S.lang);
   let card;
   const slots = {};
   // AuthCard is built first with empty slots so screens can show alerts inside it
