@@ -1,6 +1,7 @@
 // Kit: every component in every state, rendered twice — in a light and a dark token scope.
 // Same DOM, same classes: the theme comes only from [data-theme] on the wrapper.
 import { h, Button, Link, TextField, PasswordField, CodeInput, Checkbox, InlineAlert, Divider, TenantOption, LanguageSwitcher, ThemeSwitcher, BrandMark } from '../components.js';
+import { typo } from '../typo.js';
 import { LANGS, initialLang, saveLang, initialTheme, applyTheme, translator, langName, onExternalChange, applyLang } from '../env.js';
 
 const K = {
@@ -11,6 +12,9 @@ const K = {
   ar: { title: 'المكوّنات والرموز', back: 'فتح النموذج الأولي', intro: 'يظهر كل مكوّن مرتين: في منطقة فاتحة وأخرى داكنة. لا توجد نسخ «داكنة»: يقرأ المكوّن رموز المكوّنات، وهي تشير إلى الرموز الدلالية، والمظهر يبدّل الطبقة الدلالية فقط.', themes: 'المظاهر', components: 'المكوّنات', tokens: 'الرموز', semantic: 'دلالية', component: 'رموز المكوّنات', primitive: 'القيم الأساسية', dimension: 'المقاسات', type: 'الطباعة', contrast: 'التباين', token: 'الرمز', css: 'CSS', light: 'فاتح', dark: 'داكن', ref: 'المرجع', value: 'القيمة', pair: 'الزوج', min: 'الحد الأدنى', ratio: 'النسبة', states: { default: 'عادي', hover: 'تمرير', pressed: 'ضغط', focus: 'تركيز', disabled: 'معطّل', loading: 'تحميل', filled: 'معبّأ', error: 'خطأ', readonly: 'للقراءة فقط', checked: 'محدّد', empty: 'فارغ', partial: 'إدخال' }, sample: 'وحدة تحكم أمنية واحدة لكل مكاتب الشركة وأجهزتها' }
 };
 
+// Kit copy goes through the same typograph as the prototype strings
+const typoDeep = (o, l) => typeof o === 'string' ? typo(o, l) : Object.fromEntries(Object.entries(o).map(([key, v]) => [key, typoDeep(v, l)]));
+for (const l of Object.keys(K)) K[l] = typoDeep(K[l], l);
 let lang = initialLang(), theme = initialTheme(), t = translator(lang), k = K[lang];
 const root = document.getElementById('kit');
 const tokens = await (await fetch('tokens.json')).json();
